@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net462</TargetFramework>
+        <LangVersion>6</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="mscorlib">
+        <HintPath>..\References\mscorlib.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.Core">
+        <HintPath>..\References\Oxide.Core.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.CSharp">
+        <HintPath>..\References\Oxide.CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.Ext.Discord">
+        <HintPath>..\References\Oxide.Ext.Discord.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.References">
+        <HintPath>..\References\Oxide.References.dll</HintPath>
+      </Reference>
+      <Reference Include="Oxide.Unity">
+        <HintPath>..\References\Oxide.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine">
+        <HintPath>..\References\UnityEngine.dll</HintPath>
+      </Reference>
+      <Reference Include="UnityEngine.CoreModule">
+        <HintPath>..\References\UnityEngine.CoreModule.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="copy &quot;DiscordPM.cs&quot; &quot;../../DiscordPM.cs&quot;" />
+    </Target>
+
+</Project>
