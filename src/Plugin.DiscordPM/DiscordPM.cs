@@ -69,8 +69,7 @@ namespace Oxide.Plugins
         private readonly DiscordPlaceholders _placeholders = GetLibrary<DiscordPlaceholders>();
         private readonly DiscordMessageTemplates _templates = GetLibrary<DiscordMessageTemplates>();
         private readonly DiscordCommandLocalizations _localizations = GetLibrary<DiscordCommandLocalizations>();
-        private readonly PlayerNameFormatter _nameFormatter = PlayerNameFormatter.Create(PlayerDisplayNameMode.IncludeClanName);
-        
+
         private readonly Hash<string, IPlayer> _replies = new Hash<string, IPlayer>();
         private readonly Hash<string, string> _nameCache = new Hash<string, string>();
         
@@ -329,17 +328,14 @@ namespace Oxide.Plugins
 
         public void AddCommandNameOption(ApplicationCommandBuilder builder)
         {
-            builder.AddOption(CommandOptionType.String, NameArg, "Name of the player")
-                   .Required()
-                   .AutoComplete()
-                   .Build();
+            builder.AddOption(CommandOptionType.String, NameArg, "Name of the player",
+                options => options.Required().AutoComplete());
         }
         
         public void AddCommandMessageOption(ApplicationCommandBuilder builder)
         {
-            builder.AddOption(CommandOptionType.String, MessageArg, "Message to send the player")
-                   .Required()
-                   .Build();
+            builder.AddOption(CommandOptionType.String, MessageArg, "Message to send the player",
+                options => options.Required());
         }
         #endregion
 
@@ -351,7 +347,7 @@ namespace Oxide.Plugins
             IPlayer player = interaction.User.Player;
             if (player == null)
             {
-                interaction.CreateTemplateResponse(Client, this, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.UnlinkedUser, GetInteractionCallback(interaction), GetDefault());
+                interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.UnlinkedUser, GetInteractionCallback(interaction), GetDefault());
                 return;
             }
 
@@ -361,7 +357,7 @@ namespace Oxide.Plugins
             IPlayer target = players.FindPlayerById(targetId);
             if (target == null)
             {
-                interaction.CreateTemplateResponse(Client, this, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.InvalidAutoCompleteSelection, GetInteractionCallback(interaction), GetDefault());
+                interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.InvalidAutoCompleteSelection, GetInteractionCallback(interaction), GetDefault());
                 return;
             }
 
@@ -378,7 +374,7 @@ namespace Oxide.Plugins
             IPlayer player = interaction.User.Player;
             if (player == null)
             {
-                interaction.CreateTemplateResponse(Client, this, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.UnlinkedUser, GetInteractionCallback(interaction), GetDefault());
+                interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.UnlinkedUser, GetInteractionCallback(interaction), GetDefault());
                 return;
             }
             
@@ -387,7 +383,7 @@ namespace Oxide.Plugins
             IPlayer target = _replies[player.Id];
             if (target == null)
             {
-                interaction.CreateTemplateResponse(Client, this, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.NoPreviousPm, GetInteractionCallback(interaction), GetDefault().AddCommand(_pmCommand));
+                interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Errors.NoPreviousPm, GetInteractionCallback(interaction), GetDefault().AddCommand(_pmCommand));
                 return;
             }
             
@@ -406,7 +402,7 @@ namespace Oxide.Plugins
             {
                 SendPlayerPrivateMessage(player, target, message, LangKeys.ToFormat, TemplateKeys.Messages.To);
             }
-            interaction.CreateTemplateResponse(Client, this, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Messages.To, GetInteractionCallback(interaction), GetPmDefault(player, target, message));
+            interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Messages.To, GetInteractionCallback(interaction), GetPmDefault(player, target, message));
             SendPlayerPrivateMessage(target, player, message, LangKeys.FromFormat, TemplateKeys.Messages.From);
             LogPrivateMessage(player, target, message);
         }
@@ -415,9 +411,9 @@ namespace Oxide.Plugins
         [DiscordAutoCompleteCommand(PmCommand, NameArg)]
         private void HandleNameAutoComplete(DiscordInteraction interaction, InteractionDataOption focused)
         {
-            string search = focused.GetValue<string>();
+            string search = focused.GetString();
             InteractionAutoCompleteBuilder response = interaction.GetAutoCompleteBuilder();
-            response.AddOnlinePlayers(search, _nameFormatter);
+            response.AddOnlinePlayers(search, PlayerNameFormatter.ClanName);
             interaction.CreateResponse(Client, response);
         }
 
@@ -437,12 +433,12 @@ namespace Oxide.Plugins
         {
             PlayerPlaceholders.RegisterPlaceholders(this, "discordpm.from", PlaceholderKeys.Data.From);
             PlayerPlaceholders.RegisterPlaceholders(this, "discordpm.to", PlaceholderKeys.Data.To);
-            _placeholders.RegisterPlaceholder<IPlayer>(this, PlaceholderKeys.From, PlaceholderKeys.Data.From, PlayerName);
-            _placeholders.RegisterPlaceholder<IPlayer>(this, PlaceholderKeys.To, PlaceholderKeys.Data.To, PlayerName);
-            _placeholders.RegisterPlaceholder<string>(this, PlaceholderKeys.Message,  PlaceholderKeys.Data.Message, PlaceholderFormatting.Replace);
+            _placeholders.RegisterPlaceholder<IPlayer, string>(this, PlaceholderKeys.From, PlaceholderKeys.Data.From, PlayerName);
+            _placeholders.RegisterPlaceholder<IPlayer, string>(this, PlaceholderKeys.To, PlaceholderKeys.Data.To, PlayerName);
+            _placeholders.RegisterPlaceholder<string>(this, PlaceholderKeys.Message,  PlaceholderKeys.Data.Message);
         }
-        
-        public void PlayerName(StringBuilder builder, PlaceholderState state, IPlayer player) => PlaceholderFormatting.Replace(builder, state, GetPlayerName(player));
+
+        public string PlayerName(IPlayer player) => GetPlayerName(player);
 
         public PlaceholderData GetPmDefault(IPlayer from, IPlayer to, string message)
         {
@@ -454,17 +450,17 @@ namespace Oxide.Plugins
         
         public PlaceholderData GetDefault()
         {
-            return _placeholders.CreateData(this).AddNowTimestamp();
+            return _placeholders.CreateData(this);
         }
         #endregion
 
         #region Discord Templates
         public void RegisterTemplates()
         {
-            DiscordMessageTemplate toMessage = CreateTemplateEmbed($"[{{timestamp.shortime}}] PM to {PlaceholderKeys.To}: {PlaceholderKeys.Message}", DiscordColor.Success.ToHex());
+            DiscordMessageTemplate toMessage = CreateTemplateEmbed($"[{{timestamp.now.shortime}}] PM to {PlaceholderKeys.To}: {PlaceholderKeys.Message}", DiscordColor.Success.ToHex());
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.To, toMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
             
-            DiscordMessageTemplate fromMessage = CreateTemplateEmbed($"[{{timestamp.shortime}}] PM from {PlaceholderKeys.From}: {PlaceholderKeys.Message}", DiscordColor.Danger.ToHex());
+            DiscordMessageTemplate fromMessage = CreateTemplateEmbed($"[{{timestamp.now.shortime}}] PM from {PlaceholderKeys.From}: {PlaceholderKeys.Message}", DiscordColor.Danger.ToHex());
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.From, fromMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));       
             
             DiscordMessageTemplate logMessage = CreateTemplateEmbed($"{PlaceholderKeys.From} -> {PlaceholderKeys.To}: {PlaceholderKeys.Message}", DiscordColor.Danger.ToHex());
@@ -582,7 +578,7 @@ namespace Oxide.Plugins
                 LogToFile(string.Empty, log, this);
             }
 
-            _logChannel?.CreateGlobalTemplateMessage(Client, this, TemplateKeys.Messages.Log, null, GetPmDefault(player, target, message));
+            _logChannel?.CreateGlobalTemplateMessage(Client, TemplateKeys.Messages.Log, null, GetPmDefault(player, target, message));
         }
 
         public string GetPlayerName(IPlayer player)
@@ -641,7 +637,7 @@ namespace Oxide.Plugins
         {
             if (player.IsLinked())
             {
-                player.SendDiscordTemplateMessage(Client, this, templateKey, null, GetPmDefault(player, target, message));
+                player.SendDiscordTemplateMessage(Client, templateKey, null, GetPmDefault(player, target, message));
             }
         }
 
