@@ -5,7 +5,29 @@
         <LangVersion>6</LangVersion>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <DefineConstants>TRACE;RUST</DefineConstants>
+    </PropertyGroup>
+
     <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+        <HintPath>..\References\Rust\Assembly-CSharp.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Console">
+        <HintPath>..\References\Rust\Facepunch.Console.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Network">
+        <HintPath>..\References\Rust\Facepunch.Network.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.System">
+        <HintPath>..\References\Rust\Facepunch.System.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.Unity">
+        <HintPath>..\References\Rust\Facepunch.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="Facepunch.UnityEngine">
+        <HintPath>..\References\Rust\Facepunch.UnityEngine.dll</HintPath>
+      </Reference>
       <Reference Include="mscorlib">
         <HintPath>..\References\mscorlib.dll</HintPath>
       </Reference>
@@ -23,6 +45,12 @@
       </Reference>
       <Reference Include="Oxide.Unity">
         <HintPath>..\References\Oxide.Unity.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Data">
+        <HintPath>..\References\Rust\Rust.Data.dll</HintPath>
+      </Reference>
+      <Reference Include="Rust.Localization">
+        <HintPath>..\References\Rust\Rust.Localization.dll</HintPath>
       </Reference>
       <Reference Include="UnityEngine">
         <HintPath>..\References\UnityEngine.dll</HintPath>

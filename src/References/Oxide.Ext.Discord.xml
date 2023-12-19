@@ -146,9 +146,173 @@
             Attribute for setting <see cref="T:Oxide.Ext.Discord.Pooling.DiscordPluginPool"/> on a plugin
             </summary>
         </member>
+        <member name="T:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder">
+            <summary>
+            Builder for ANSI colored text
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder.Append(System.String,Oxide.Ext.Discord.Builders.Ansi.TextColor,Oxide.Ext.Discord.Builders.Ansi.BackgroundColor,Oxide.Ext.Discord.Builders.Ansi.FontStyle)">
+            <summary>
+            Appends text with the given color, background, and font style
+            </summary>
+            <param name="text">Text to add</param>
+            <param name="color">Color of the text</param>
+            <param name="background">Background color of the text</param>
+            <param name="style">Font style of the text</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder.AppendLine(System.String,Oxide.Ext.Discord.Builders.Ansi.TextColor,Oxide.Ext.Discord.Builders.Ansi.BackgroundColor,Oxide.Ext.Discord.Builders.Ansi.FontStyle)">
+            <summary>
+            Appends text with a line terminator with the given color, background, and font style
+            </summary>
+            <param name="text">Text to add</param>
+            <param name="color">Color of the text</param>
+            <param name="background">Background color of the text</param>
+            <param name="style">Font style of the text</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder.AppendLine">
+            <summary>
+            Appends a line
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder.Build">
+            <summary>
+            Returns the build Ansi Text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor">
+            <summary>
+            Ansi Background colors
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.Default">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.DarkBlue">
+            <summary>
+            Dark Blue
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.Orange">
+            <summary>
+            Orange
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.MarbleBlue">
+            <summary>
+            Marble Blue
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.GreyTurquoise">
+            <summary>
+            Grey Turquoise
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.Gray">
+            <summary>
+            Gray
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.Indigo">
+            <summary>
+            Indigo
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.LightGray">
+            <summary>
+            Light Gray
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.BackgroundColor.White">
+            <summary>
+            White
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Builders.Ansi.FontStyle">
+            <summary>
+            Font Styles for ANSI text
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.FontStyle.Default">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.FontStyle.Bold">
+            <summary>
+            Bold
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.FontStyle.Underline">
+            <summary>
+            Underline
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Builders.Ansi.TextColor">
+            <summary>
+            Text Colors for Ansi Text
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Default">
+            <summary>
+            Default
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Gray">
+            <summary>
+            Gray
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Red">
+            <summary>
+            Red
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Green">
+            <summary>
+            Green
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Yellow">
+            <summary>
+            Yellow
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Blue">
+            <summary>
+            Blue
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Pink">
+            <summary>
+            Pink
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.Cyan">
+            <summary>
+            Cyan
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.Ansi.TextColor.White">
+            <summary>
+            White
+            </summary>
+        </member>
         <member name="T:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandBuilder">
             <summary>
             Builder to use when building application commands
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandBuilder.CommandName">
+            <summary>
+            The Name of the command
             </summary>
         </member>
         <member name="M:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandBuilder.#ctor(System.String,System.String,Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.ApplicationCommandType)">
@@ -263,6 +427,16 @@
             Builder for Sub Command Groups
             </summary>
         </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandGroupBuilder.CommandName">
+            <summary>
+            The Name of the command
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandGroupBuilder.GroupName">
+            <summary>
+            The Name of the group
+            </summary>
+        </member>
         <member name="M:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandGroupBuilder.AddNameLocalizations(Oxide.Core.Plugins.Plugin,System.String)">
             <summary>
             Adds command name localizations for a given plugin and lang key
@@ -309,6 +483,26 @@
             Represents a Subcommand Option Builder for SubCommands
             </summary>
         </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandOptionBuilder.CommandName">
+            <summary>
+            The Name of the command
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandOptionBuilder.GroupName">
+            <summary>
+            The Name of the group
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandOptionBuilder.SubCommandName">
+            <summary>
+            The Name of the Sub Command
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandOptionBuilder.OptionName">
+            <summary>
+            The Name of the Option
+            </summary>
+        </member>
         <member name="M:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandOptionBuilder.#ctor(System.Collections.Generic.List{Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.CommandOption},Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.CommandOptionType,System.String,System.String,Oxide.Ext.Discord.Libraries.Locale.ServerLocale,System.String,System.String,System.String)">
             <summary>
             Constructor
@@ -318,6 +512,9 @@
             <param name="name"></param>
             <param name="description"></param>
             <param name="defaultLanguage"></param>
+            <param name="commandName"></param>
+            <param name="groupName"></param>
+            <param name="subCommandName"></param>
         </member>
         <member name="M:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationCommandOptionBuilder.AddNameLocalizations(Oxide.Core.Plugins.Plugin,System.String)">
             <summary>
@@ -452,6 +649,21 @@
             Application Sub Command Builder
             </summary>
         </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationSubCommandBuilder.CommandName">
+            <summary>
+            The Name of the command
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationSubCommandBuilder.GroupName">
+            <summary>
+            The Name of the group
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationSubCommandBuilder.SubCommandName">
+            <summary>
+            The Name of the Sub Command
+            </summary>
+        </member>
         <member name="M:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationSubCommandBuilder.#ctor(System.Collections.Generic.List{Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.CommandOption},System.String,System.String,Oxide.Ext.Discord.Libraries.Locale.ServerLocale,System.String,System.String)">
             <summary>
             Constructor
@@ -460,6 +672,8 @@
             <param name="name">Name of the sub command</param>
             <param name="description">Description of the sub command</param>
             <param name="defaultLanguage"></param>
+            <param name="commandName"></param>
+            <param name="groupName"></param>
         </member>
         <member name="M:Oxide.Ext.Discord.Builders.ApplicationCommands.ApplicationSubCommandBuilder.AddNameLocalizations(Oxide.Core.Plugins.Plugin,System.String)">
             <summary>
@@ -727,7 +941,7 @@
         </member>
         <member name="T:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode">
             <summary>
-            AutoComplete Player Search Options for <see cref="T:Oxide.Ext.Discord.Builders.Interactions.InteractionAutoCompleteBuilder"/>
+            Player Name Formatting options for <see cref="T:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerNameFormatter"/>
             </summary>
         </member>
         <member name="F:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode.Default">
@@ -735,14 +949,14 @@
             Defaults search options
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode.IncludeClanName">
+        <member name="F:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode.Clan">
             <summary>
             Include Clan Name in search
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode.IncludePlayerId">
+        <member name="F:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode.PlayerId">
             <summary>
-            Include Steam ID
+            Include Player ID
             </summary>
         </member>
         <member name="F:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.PlayerDisplayNameMode.All">
@@ -819,6 +1033,11 @@
         <member name="T:Oxide.Ext.Discord.Builders.Interactions.InteractionAutoCompleteBuilder">
             <summary>
             Builder for Auto Complete Interaction
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Builders.Interactions.InteractionAutoCompleteBuilder.Count">
+            <summary>
+            Number of added choices
             </summary>
         </member>
         <member name="M:Oxide.Ext.Discord.Builders.Interactions.InteractionAutoCompleteBuilder.#ctor(Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction,Oxide.Ext.Discord.Entities.Interactions.Response.InteractionAutoCompleteMessage)">
@@ -903,6 +1122,24 @@
             </summary>
             <param name="permission">Permission to get groups for</param>
             <param name="filter">String to filter by</param>
+            <param name="comparison"><see cref="T:System.StringComparison"/> to use</param>
+            <param name="search"><see cref="T:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.AutoCompleteSearchMode"/> Filter search mode</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Interactions.InteractionAutoCompleteBuilder.AddPermissionsInGroup(System.String,System.String,System.StringComparison,Oxide.Ext.Discord.Builders.Interactions.AutoComplete.AutoCompleteSearchMode)">
+            <summary>
+            Adds List of Permissions that are in the given group
+            </summary>
+            <param name="group">Group to get permissions for</param>
+            <param name="filter">Permission filter</param>
+            <param name="comparison"><see cref="T:System.StringComparison"/> to use</param>
+            <param name="search"><see cref="T:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.AutoCompleteSearchMode"/> Filter search mode</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Builders.Interactions.InteractionAutoCompleteBuilder.AddPermissionsNotInGroup(System.String,System.String,System.StringComparison,Oxide.Ext.Discord.Builders.Interactions.AutoComplete.AutoCompleteSearchMode)">
+            <summary>
+            Adds a List of Permissions that are not in a given group
+            </summary>
+            <param name="group">Group that doesn't have the permissions</param>
+            <param name="filter">Permission filter</param>
             <param name="comparison"><see cref="T:System.StringComparison"/> to use</param>
             <param name="search"><see cref="T:Oxide.Ext.Discord.Builders.Interactions.AutoComplete.AutoCompleteSearchMode"/> Filter search mode</param>
         </member>
@@ -1317,11 +1554,11 @@
             <param name="embeds">Embeds to be added</param>
             <returns>This</returns>
         </member>
-        <member name="M:Oxide.Ext.Discord.Builders.Messages.BaseBuilders.BaseMessageBuilder`2.AddAllowedMentions(Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention)">
+        <member name="M:Oxide.Ext.Discord.Builders.Messages.BaseBuilders.BaseMessageBuilder`2.AddAllowedMentions(Oxide.Ext.Discord.Entities.Messages.AllowedMentions)">
             <summary>
-            Adds <see cref="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention"/> to the response
+            Adds <see cref="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentions"/> to the response
             </summary>
-            <param name="mention">Mentions to be added</param>
+            <param name="mentions">Mentions to be added</param>
             <returns>This</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Builders.Messages.BaseBuilders.BaseMessageBuilder`2.SuppressEmbeds">
@@ -1555,6 +1792,20 @@
             <param name="value"></param>
             <returns></returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Cache.EnumCache`1.Next(`0)">
+            <summary>
+            Returns the next enum values. If the value is the last value it will start from the beginning
+            </summary>
+            <param name="value">Value to get the next enum from</param>
+            <returns>Next enum from the given value</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Cache.EnumCache`1.Previous(`0)">
+            <summary>
+            Returns the previous enum values.
+            </summary>
+            <param name="value">Value to get the previous enum from</param>
+            <returns>Previous enum from the given value</returns>
+        </member>
         <member name="T:Oxide.Ext.Discord.Cache.FileAttachmentCache">
             <summary>
             Caches file names when sending attachments
@@ -1754,6 +2005,11 @@
             <summary>
             Returns if the bot has fully loaded.
             All guilds are loaded and if <see cref="F:Oxide.Ext.Discord.Entities.Gateway.GatewayIntents.GuildMembers"/> is specified all guild members have been loaded
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Clients.BotClient.IsReady">
+            <summary>
+            Returns if ReadyData is set
             </summary>
         </member>
         <member name="F:Oxide.Ext.Discord.Clients.BotClient.Clients">
@@ -2058,7 +2314,7 @@
         <member name="P:Oxide.Ext.Discord.Connections.BotConnection.LogLevel">
             <summary>
             Discord Extension Logging Level.
-            See <see cref="P:Oxide.Ext.Discord.Connections.BotConnection.LogLevel"/>
+            See <see cref="T:Oxide.Ext.Discord.Logging.DiscordLogLevel"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Connections.BotConnection.HiddenToken">
@@ -3373,8 +3629,8 @@
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Activities.DiscordActivity.Emoji">
             <summary>
-            tTe emoji used for a custom status
-            See <see cref="P:Oxide.Ext.Discord.Entities.Activities.DiscordActivity.Emoji"/>
+            The emoji used for a custom status
+            See <see cref="T:Oxide.Ext.Discord.Entities.Emojis.DiscordEmoji"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Activities.DiscordActivity.Party">
@@ -3873,6 +4129,11 @@
             If this application is a game sold on Discord, this field will be the guild to which it has been linked
             </summary>
         </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.Guild">
+            <summary>
+            Partial Guild for the application
+            </summary>
+        </member>
         <member name="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.PrimarySkuId">
             <summary>
             If this application is a game sold on Discord, this field will be the id of the "Game SKU" that is created, if exists
@@ -3891,6 +4152,11 @@
         <member name="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.Flags">
             <summary>
             The application's public flags
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.ApproximateGuildCount">
+            <summary>
+            An approximate count of the app's guild membership.
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.Tags">
@@ -3926,7 +4192,7 @@
         <member name="M:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.HasApplicationFlag(Oxide.Ext.Discord.Entities.Applications.ApplicationFlags)">
             <summary>
             Returns if the given application has the passed in application flag
-            If <see cref="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.Flags"/>  is null false is returned
+            If <see cref="P:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.Flags"/> is null false is returned
             </summary>
             <param name="flag">Flag to compare against</param>
             <returns>True of application has flag; False Otherwise</returns>
@@ -3939,14 +4205,20 @@
             <param name="flag">Flag to compare against</param>
             <returns>True of application has flag; False Otherwise</returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.Get(Oxide.Ext.Discord.Clients.DiscordClient)">
+            <summary>
+            Returns the current users application
+            See <a href="">Get Current Application</a>
+            </summary>
+        </member>
         <member name="M:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.GetGlobalCommands(Oxide.Ext.Discord.Clients.DiscordClient,System.Boolean)">
             <summary>
             Fetch all of the global commands for your application.
             Returns a list of ApplicationCommand.
             See <a href="https://discord.com/developers/docs/interactions/application-commands#get-global-application-commands">Get Global Application Commands</a>
-            </summary>
             <param name="client">Client to use</param>
             <param name="withLocalizations">Include Command Localizations</param>
+            </summary>
         </member>
         <member name="M:Oxide.Ext.Discord.Entities.Applications.DiscordApplication.GetGlobalCommand(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake)">
             <summary>
@@ -5110,7 +5382,6 @@
             Creates a message in a text channel using a global message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template name</param>
             <param name="message">message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -5120,7 +5391,6 @@
             Creates a message in a text channel using a localized message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template name</param>
             <param name="language">Oxide language for the template</param>
             <param name="message">message to use (optional)</param>
@@ -6841,7 +7111,7 @@
         <member name="P:Oxide.Ext.Discord.Entities.Gateway.Events.GatewayReadyEvent.Application">
             <summary>
             Contains id and flags
-            See <see cref="P:Oxide.Ext.Discord.Entities.Gateway.Events.GatewayReadyEvent.Application"/>
+            See <see cref="T:Oxide.Ext.Discord.Entities.Applications.DiscordApplication"/>
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Gateway.Events.GatewayResumedEvent">
@@ -7259,6 +7529,11 @@
         <member name="P:Oxide.Ext.Discord.Entities.Gateway.Events.MessageReactionAddedEvent.Emoji">
             <summary>
             The emoji used to react
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Gateway.Events.MessageReactionAddedEvent.MessageAuthorId">
+            <summary>
+            ID of the user who authored the message which was reacted to
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Gateway.Events.MessageReactionRemovedAllEmojiEvent">
@@ -7799,7 +8074,7 @@
         <member name="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.SystemChannelFlags">
             <summary>
             System channel flags
-            See <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.SystemChannelFlags"/>
+            See <see cref="T:Oxide.Ext.Discord.Entities.Guilds.SystemChannelFlags"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.RulesChannelId">
@@ -8608,10 +8883,17 @@
         <member name="M:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.GetOnboarding(Oxide.Ext.Discord.Clients.DiscordClient)">
             <summary>
             Returns the <see cref="T:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboarding"/> for the guild.
-            
             </summary>
             <param name="client">Client to use</param>
             See <a href="https://discord.com/developers/docs/resources/guild#get-guild-onboarding">Get Guild Onboarding</a>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.EditOnboarding(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingUpdate)">
+            <summary>
+            Modifies the onboarding configuration of the guild.
+            </summary>
+            <param name="client">Client to use</param>
+            <param name="update">Update for the guild onboarding</param>
+            See <a href="">Modify Guild Onboarding</a>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Guilds.ExplicitContentFilterLevel">
             <summary>
@@ -9694,6 +9976,51 @@
         <member name="P:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboarding.Enabled">
             <summary>
             Whether onboarding is enabled in the guild
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboarding.Mode">
+            <summary>
+            Current mode of onboarding
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingMode">
+            <summary>
+            Represents <a href="https://discord.com/developers/docs/resources/guild#onboarding-mode">Guild Onboarding Mode Structure</a>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingMode.OnboardingDefault">
+            <summary>
+            Counts only Default Channels towards constraints
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingMode.OnboardingAdvanced">
+            <summary>
+            Counts Default Channels and Questions towards constraints
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingUpdate">
+            <summary>
+            Represents <a href="">Guild Onboarding Update Structure</a>
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingUpdate.Prompts">
+            <summary>
+            Prompts shown during onboarding and in customize community
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingUpdate.DefaultChannelIds">
+            <summary>
+            Channel IDs that members get opted into automatically
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingUpdate.Enabled">
+            <summary>
+            Whether onboarding is enabled in the guild
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Guilds.Onboarding.GuildOnboardingUpdate.Mode">
+            <summary>
+            Current mode of onboarding
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Guilds.Onboarding.OnboardingPrompt">
@@ -11302,7 +11629,6 @@
             Creates a interaction message response from a message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="type">Response type for the interaction</param>
             <param name="templateName">Name of the template</param>
             <param name="message">Message to send (optional)</param>
@@ -11314,7 +11640,6 @@
             Creates a interaction modal response from a modal template 
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName"></param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -11383,7 +11708,6 @@
             Edit a interaction response with a message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -12346,13 +12670,13 @@
         <member name="P:Oxide.Ext.Discord.Entities.Invites.DiscordInvite.Guild">
             <summary>
             The guild this invite is for
-            See <see cref="P:Oxide.Ext.Discord.Entities.Invites.DiscordInvite.Guild"/>
+            See <see cref="T:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Invites.DiscordInvite.Channel">
             <summary>
             The channel this invite is for
-            See <see cref="P:Oxide.Ext.Discord.Entities.Invites.DiscordInvite.Channel"/>
+            See <see cref="T:Oxide.Ext.Discord.Entities.Channels.DiscordChannel"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Invites.DiscordInvite.Inviter">
@@ -12509,60 +12833,75 @@
             Invite is for a go live stream
             </summary>
         </member>
-        <member name="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention">
+        <member name="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentions">
             <summary>
             Represents a <a href="https://discord.com/developers/docs/resources/channel#allowed-mentions-object">Allowed Mention Types</a>
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention.AllowedTypes">
+        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedTypes">
             <summary>
             An array of allowed mention types to parse from the content.
-            <see cref="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMentionTypes"/>
+            <see cref="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentionTypes"/>
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention.Roles">
+        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.Roles">
             <summary>
             Array of Role IDs to mention (Max size of 100)
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention.Users">
+        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.Users">
             <summary>
             Array of User IDs to mention (Max size of 100)
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention.RepliedUser">
+        <member name="P:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.RepliedUser">
             <summary>
             For replies, whether to mention the author of the message being replied to (default false)
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMention.None">
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.None">
             <summary>
             Prevents all mentions
             </summary>
         </member>
-        <member name="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMentionTypes">
+        <member name="T:Oxide.Ext.Discord.Entities.Messages.AllowedMentionTypes">
             <summary>
              Represents a <a href="https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mention-types">Allowed Mention Types</a> for a message
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMentionTypes.Unknown">
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentionTypes.Unknown">
             <summary>
             Discord Extension doesn't currently support this allowed mention type.
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMentionTypes.Roles">
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentionTypes.Roles">
             <summary>
             Controls role mentions
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMentionTypes.Users">
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentionTypes.Users">
             <summary>
             	Controls user mentions
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentions.AllowedMentionTypes.Everyone">
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AllowedMentionTypes.Everyone">
             <summary>
             Controls @everyone and @here mentions
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Entities.Messages.AttachmentFlags">
+            <summary>
+            Represents a <a href="https://discord.com/developers/docs/resources/channelattachment-flags">Attachment flags for an attachment</a>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AttachmentFlags.None">
+            <summary>
+            No Attachment Flags
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Entities.Messages.AttachmentFlags.IsRemix">
+            <summary>
+            This attachment has been edited using the remix feature on mobile
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Messages.BaseMessageCreate">
@@ -12586,7 +12925,7 @@
             Embeds are deduplicated by URL. If a message contains multiple embeds with the same URL, only the first is shown.
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Entities.Messages.BaseMessageCreate.AllowedMention">
+        <member name="P:Oxide.Ext.Discord.Entities.Messages.BaseMessageCreate.AllowedMentions">
             <summary>
             Allowed mentions for a message
             Allows for more granular control over mentions without various hacks to the message content. 
@@ -12726,7 +13065,7 @@
         <member name="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Embeds">
             <summary>
             Any embedded content
-            <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Embeds"/>
+            <see cref="T:Oxide.Ext.Discord.Entities.Messages.Embeds.DiscordEmbed"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Reactions">
@@ -12765,7 +13104,7 @@
         <member name="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Application">
             <summary>
             Sent with Rich Presence-related chat embeds
-            <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Application"/>
+            <see cref="T:Oxide.Ext.Discord.Entities.Applications.DiscordApplication"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.ApplicationId">
@@ -12776,7 +13115,7 @@
         <member name="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.MessageReference">
             <summary>
             Data showing the source of a crosspost, channel follow add, pin, or reply message
-            <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.MessageReference"/>
+            <see cref="T:Oxide.Ext.Discord.Entities.Messages.MessageReference"/>
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Flags">
@@ -12958,7 +13297,6 @@
             Reply to a message using a global message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -12968,7 +13306,6 @@
             Reply to a message using a global message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="language">Oxide language to use</param>
             <param name="message">Message to use (optional)</param>
@@ -13116,7 +13453,6 @@
             Edit a message using a global message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
             <param name="update">Update to be applied to the message</param>
@@ -13126,7 +13462,6 @@
             Edit a message using a localized message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="language">Oxide language to use</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -13602,6 +13937,11 @@
             base64 encoded bytearray representing a sampled waveform (currently for voice messages)
             </summary>
         </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Messages.MessageAttachment.Flags">
+            <summary>
+            Attachment Flags
+            </summary>
+        </member>
         <member name="T:Oxide.Ext.Discord.Entities.Messages.MessageCreate">
             <summary>
             Represents a <a href="https://discord.com/developers/docs/resources/channel#create-message-jsonform-params">Message Create Structure</a> to be created in discord
@@ -13759,7 +14099,7 @@
         <member name="P:Oxide.Ext.Discord.Entities.Messages.MessageReaction.Emoji">
             <summary>
             Emoji information
-            <see cref="P:Oxide.Ext.Discord.Entities.Messages.MessageReaction.Emoji"/>
+            <see cref="T:Oxide.Ext.Discord.Entities.Emojis.DiscordEmoji"/>
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Messages.MessageReference">
@@ -14075,6 +14415,11 @@
         <member name="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Tags">
             <summary>
             The tags this role has
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Flags">
+            <summary>
+            The flags for the given role
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Mention">
@@ -14396,6 +14741,21 @@
         <member name="F:Oxide.Ext.Discord.Entities.Permissions.PermissionFlags.SendVoiceMessages">
             <summary>
             Allows sending voice messages
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Entities.Permissions.RoleFlags">
+            <summary>
+            Represents <a href="https://discord.com/developers/docs/topics/permissions#role-flags">Role Flags</a>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Entities.Permissions.RoleFlags.None">
+            <summary>
+            No Role Flags
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Entities.Permissions.RoleFlags.InPrompt">
+            <summary>
+            Role can be selected by members in an onboarding
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Entities.Permissions.RoleSubscription">
@@ -15200,6 +15560,11 @@
             <see cref="T:Oxide.Ext.Discord.Entities.Users.UserFlags"/>
             </summary>
         </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.AvatarDecoration">
+            <summary>
+            The user's avatar decoration hash
+            </summary>
+        </member>
         <member name="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.Mention">
             <summary>
             Returns a string to mention this users nickname in a message
@@ -15213,6 +15578,11 @@
         <member name="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.GetAvatarUrl">
             <summary>
             Avatar Url for the user
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.GetAvatarDecorationUrl">
+            <summary>
+            Avatar Decoration Url for the user
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.GetBannerUrl">
@@ -15291,7 +15661,6 @@
             Send a message in a DM to the user using a localized message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="language">Oxide language to use</param>
             <param name="message">Message to use (optional)</param>
@@ -15302,7 +15671,6 @@
             Reply to a message using a global message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -15944,7 +16312,6 @@
             Send a message to a webhook using a global message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -15955,7 +16322,6 @@
             Send a message to a webhook using a localized message template
             </summary>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="language">Oxide language to use</param>
             <param name="message">Message to use (optional)</param>
@@ -15971,7 +16337,7 @@
             <param name="messageId">Message ID to get</param>
             <param name="messageParams">Message Params</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Entities.Webhooks.DiscordWebhook.EditWebhookMessage(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Ext.Discord.Entities.Messages.DiscordMessage,Oxide.Ext.Discord.Entities.Webhooks.WebhookMessageParams)">
+        <member name="M:Oxide.Ext.Discord.Entities.Webhooks.DiscordWebhook.EditWebhookMessage(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Ext.Discord.Entities.Webhooks.WebhookEditMessage,Oxide.Ext.Discord.Entities.Webhooks.WebhookMessageParams)">
             <summary>
             Edits a previously-sent webhook message from the same token.
             See <a href="https://discord.com/developers/docs/resources/webhook#edit-webhook-message">Edit Webhook Message</a>
@@ -15981,7 +16347,7 @@
             <param name="messageParams">Message Params</param>
             <param name="message">The updated message</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Entities.Webhooks.DiscordWebhook.EditWebhookMessageGlobalTemplate(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Core.Plugins.Plugin,System.String,Oxide.Ext.Discord.Entities.Messages.DiscordMessage,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData,Oxide.Ext.Discord.Entities.Webhooks.WebhookMessageParams)">
+        <member name="M:Oxide.Ext.Discord.Entities.Webhooks.DiscordWebhook.EditWebhookMessageGlobalTemplate(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Core.Plugins.Plugin,System.String,Oxide.Ext.Discord.Entities.Webhooks.WebhookEditMessage,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData,Oxide.Ext.Discord.Entities.Webhooks.WebhookMessageParams)">
             <summary>
             Edit a message from a webhook using a global message template
             </summary>
@@ -15993,7 +16359,7 @@
             <param name="placeholders">Placeholders to apply (optional)</param>
             <param name="messageParams">Message Params</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Entities.Webhooks.DiscordWebhook.EditWebhookMessageTemplate(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Core.Plugins.Plugin,System.String,System.String,Oxide.Ext.Discord.Entities.Messages.DiscordMessage,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData,Oxide.Ext.Discord.Entities.Webhooks.WebhookMessageParams)">
+        <member name="M:Oxide.Ext.Discord.Entities.Webhooks.DiscordWebhook.EditWebhookMessageTemplate(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Core.Plugins.Plugin,System.String,System.String,Oxide.Ext.Discord.Entities.Webhooks.WebhookEditMessage,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData,Oxide.Ext.Discord.Entities.Webhooks.WebhookMessageParams)">
             <summary>
             Edit a message from a webhook using a localized message template
             </summary>
@@ -16544,30 +16910,50 @@
             Exception thrown when Server Locale is not found
             </summary>
         </member>
-        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.DiscordTemplateException">
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Placeholders.InvalidPlaceholderDataException">
             <summary>
-            Exception for Discord Templates
+            Exception thrown if <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey"/> is not valid
             </summary>
         </member>
-        <member name="T:Oxide.Ext.Discord.Exceptions.Pooling.InvalidPoolException">
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Placeholders.InvalidPlaceholderException">
             <summary>
-            An exception when something is invalid with a pool
+            Exception thrown if <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> is not valid
             </summary>
         </member>
-        <member name="T:Oxide.Ext.Discord.Exceptions.Promise.PromiseCancelledException">
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Promise.PromiseCancelledException">
             <summary>
             Exception when a promised is cancelled
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Exceptions.Promise.PromiseCancelledException.#ctor(System.String)">
+        <member name="M:Oxide.Ext.Discord.Exceptions.Libraries.Promise.PromiseCancelledException.#ctor(System.String)">
             <summary>
             Create the exception with description
             </summary>
             <param name="message">Exception description</param>
         </member>
-        <member name="T:Oxide.Ext.Discord.Exceptions.Promise.PromiseException">
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Promise.PromiseException">
             <summary>
             Exceptions for promises
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Templates.DiscordTemplateException">
+            <summary>
+            Exception for Discord Templates
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Templates.DuplicateTemplateException">
+            <summary>
+            Thrown when duplicate templates have been registered for the same type, plugin, and name
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Exceptions.Libraries.Templates.InvalidTemplateVersionException">
+            <summary>
+            Thrown when the minimum template version is higher than the current template version
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Exceptions.Pooling.InvalidPoolException">
+            <summary>
+            An exception when something is invalid with a pool
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Exceptions.TokenMismatchException">
@@ -16755,6 +17141,19 @@
             <typeparam name="T">Type of IComparable{T}</typeparam>
             <returns>Left if greater than or equal to right else right</returns>
         </member>
+        <member name="T:Oxide.Ext.Discord.Extensions.PlaceholderKeyExt">
+            <summary>
+            Extensions for placeholder keys
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Extensions.PlaceholderKeyExt.WithFormat(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,System.String)">
+            <summary>
+            Applies a format to a given <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/>
+            </summary>
+            <param name="key"><see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> to apply the format to</param>
+            <param name="format">Format to be applied</param>
+            <returns>string placeholder containing the placeholder with the given format</returns>
+        </member>
         <member name="T:Oxide.Ext.Discord.Extensions.PlayerExt">
             <summary>
             IPlayer Extensions for sending Discord Message to an IPlayer
@@ -16798,7 +17197,6 @@
             </summary>
             <param name="player">Player to send the message to</param>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -16809,7 +17207,6 @@
             </summary>
             <param name="player">Player to send the message to</param>
             <param name="client">Client to use</param>
-            <param name="plugin">Plugin for the template</param>
             <param name="templateName">Template Name</param>
             <param name="message">Message to use (optional)</param>
             <param name="placeholders">Placeholders to apply (optional)</param>
@@ -16843,11 +17240,27 @@
             <param name="guild">Guild the member is in</param>
             <returns>GuildMember if linked and in guild; null otherwise</returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Extensions.PlayerExt.PlayerId(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Returns the PlayerId for a given <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/>
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Extensions.PlayerExt.IsDummyPlayer(Oxide.Core.Libraries.Covalence.IPlayer)">
             <summary>
             Returns if the IPlayer is a <see cref="T:Oxide.Ext.Discord.Plugins.DiscordDummyPlayer"/>
             </summary>
             <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Extensions.PlayerExt.CreateDummyPlayer(System.String,System.String,System.String)">
+            <summary>
+            Allows plugins to create dummy IPlayers
+            </summary>
+            <param name="id">ID of the player</param>
+            <param name="name">Name of the player</param>
+            <param name="ip">IP of the player</param>
             <returns></returns>
         </member>
         <member name="T:Oxide.Ext.Discord.Extensions.PluginExt">
@@ -17093,6 +17506,15 @@
             <param name="guildId">Guild ID of the Guild Member</param>
             <param name="userId">Discord User ID</param>
             <param name="memberAvatar">Guild Member avatar</param>
+            <param name="format">Format the avatar is in</param>
+            <returns>Url of the Guild Member avatar</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Helpers.DiscordCdn.GetUserAvatarDecoration(Oxide.Ext.Discord.Entities.Snowflake,System.String,Oxide.Ext.Discord.Entities.Images.DiscordImageFormat)">
+            <summary>
+            Returns the Url of the User Avatar Decoration
+            </summary>
+            <param name="userId">Discord User ID</param>
+            <param name="decorationHash">Guild Member avatar</param>
             <param name="format">Format the avatar is in</param>
             <returns>Url of the Guild Member avatar</returns>
         </member>
@@ -17532,6 +17954,12 @@
         <member name="P:Oxide.Ext.Discord.Interfaces.Entities.Messages.IDiscordMessageTemplate.Content">
             <summary>
             Content of the message
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.Entities.Messages.IDiscordMessageTemplate.AllowedMentions">
+            <summary>
+            Allowed mentions for a message
+            Allows for more granular control over mentions without various hacks to the message content. 
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Interfaces.Entities.Messages.IDiscordMessageTemplate.Embeds">
@@ -18742,7 +19170,14 @@
             <summary>
             Returns if the specified ID is linked
             </summary>
-            <param name="playerId">Steam ID of the player</param>
+            <param name="playerId">Player ID of the player</param>
+            <returns>True if the ID is linked; false otherwise</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.IsLinked(Oxide.Ext.Discord.Libraries.Linking.PlayerId)">
+            <summary>
+            Returns if the specified ID is linked
+            </summary>
+            <param name="playerId">Player ID of the player</param>
             <returns>True if the ID is linked; false otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.IsLinked(Oxide.Ext.Discord.Entities.Snowflake)">
@@ -18770,15 +19205,15 @@
             <summary>
             Returns the Player ID of the given Discord ID if there is a link
             </summary>
-            <param name="discordId">Discord ID to get steam ID for</param>
-            <returns>Steam ID of the given given discord ID if linked; null otherwise</returns>
+            <param name="discordId">Discord ID to get player ID for</param>
+            <returns>Player ID of the given given discord ID if linked; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetPlayerId(Oxide.Ext.Discord.Entities.Users.DiscordUser)">
             <summary>
             Returns the Player ID of the given Discord ID if there is a link
             </summary>
-            <param name="user"><see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/> to get steam Id for</param>
-            <returns>Steam ID of the given given discord ID if linked; null otherwise</returns>
+            <param name="user"><see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/> to get player Id for</param>
+            <returns>Player ID of the given given discord ID if linked; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetPlayer(Oxide.Ext.Discord.Entities.Snowflake)">
             <summary>
@@ -18789,24 +19224,38 @@
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetDiscordId(System.String)">
             <summary>
-            Returns the Discord ID for the given Steam ID
+            Returns the Discord ID for the given Player ID
             </summary>
-            <param name="playerId">Steam ID to get Discord ID for</param>
-            <returns>Discord ID for the given Steam ID; null otherwise</returns>
+            <param name="playerId">Player ID to get Discord ID for</param>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetDiscordId(Oxide.Ext.Discord.Libraries.Linking.PlayerId)">
+            <summary>
+            Returns the Discord ID for the given Player ID
+            </summary>
+            <param name="playerId">Player ID to get Discord ID for</param>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetDiscordId(Oxide.Core.Libraries.Covalence.IPlayer)">
             <summary>
             Returns the Discord ID for the given IPlayer
             </summary>
             <param name="player">Player to get Discord ID for</param>
-            <returns>Discord ID for the given Steam ID; null otherwise</returns>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetDiscordUser(System.String)">
             <summary>
             Returns a minimal Discord User
             </summary>
             <param name="playerId">ID of the in game player</param>
-            <returns>Discord ID for the given Steam ID; null otherwise</returns>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetDiscordUser(Oxide.Ext.Discord.Libraries.Linking.PlayerId)">
+            <summary>
+            Returns a minimal Discord User
+            </summary>
+            <param name="playerId">ID of the in game player</param>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetDiscordUser(Oxide.Core.Libraries.Covalence.IPlayer)">
             <summary>
@@ -18817,11 +19266,19 @@
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetLinkedMember(System.String,Oxide.Ext.Discord.Entities.Guilds.DiscordGuild)">
             <summary>
-            Returns a linked guild member for the matching steam id in the given guild
+            Returns a linked guild member for the matching player id in the given guild
             </summary>
             <param name="playerId">ID of the in game player</param>
             <param name="guild">Guild the member is in</param>
-            <returns>Discord ID for the given Steam ID; null otherwise</returns>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetLinkedMember(Oxide.Ext.Discord.Libraries.Linking.PlayerId,Oxide.Ext.Discord.Entities.Guilds.DiscordGuild)">
+            <summary>
+            Returns a linked guild member for the matching player id in the given guild
+            </summary>
+            <param name="playerId">ID of the in game player</param>
+            <param name="guild">Guild the member is in</param>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.GetLinkedMember(Oxide.Core.Libraries.Covalence.IPlayer,Oxide.Ext.Discord.Entities.Guilds.DiscordGuild)">
             <summary>
@@ -18829,7 +19286,7 @@
             </summary>
             <param name="player">Player to get the Discord User for</param>
             <param name="guild">Guild the member is in</param>
-            <returns>Discord ID for the given Steam ID; null otherwise</returns>
+            <returns>Discord ID for the given Player ID; null otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Linking.DiscordLink.OnLinked(Oxide.Core.Plugins.Plugin,Oxide.Core.Libraries.Covalence.IPlayer,Oxide.Ext.Discord.Entities.Users.DiscordUser)">
             <summary>
@@ -18855,7 +19312,7 @@
             Represents a plugin that supports Discord Link library
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Linking.IDiscordLinkPlugin.GetSteamToDiscordIds">
+        <member name="M:Oxide.Ext.Discord.Libraries.Linking.IDiscordLinkPlugin.GetPlayerIdToDiscordIds">
             <summary>
             Returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> of Steam ID's to Discord ID's
             </summary>
@@ -19166,12 +19623,12 @@
             <see cref="M:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand.MentionCustom(System.String)"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ApplicationCommandPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ApplicationCommandPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.ChannelPlaceholders">
@@ -19204,12 +19661,12 @@
             <see cref="P:Oxide.Ext.Discord.Entities.Channels.DiscordChannel.Mention"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ChannelPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ChannelPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.DateTimePlaceholders">
@@ -19252,12 +19709,12 @@
             <see cref="P:System.DateTime.Millisecond"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.DateTimePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.DateTimePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.GuildPlaceholders">
@@ -19295,12 +19752,12 @@
             <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.Members"/> count placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.GuildPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.GuildPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.InteractionPlaceholders">
@@ -19313,12 +19770,12 @@
             <see cref="M:Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction.GetLangMessage(Oxide.Core.Plugins.Plugin,System.String)"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.InteractionPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.InteractionPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.InteractionKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.MemberPlaceholders">
@@ -19341,12 +19798,12 @@
             <see cref="P:Oxide.Ext.Discord.Entities.Guilds.GuildMember.Id"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.MemberPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.MemberPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.MemberKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.MessagePlaceholders">
@@ -19369,12 +19826,12 @@
             <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Content"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.MessagePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.MessagePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.MessageKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders">
@@ -19387,7 +19844,7 @@
             <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Id"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.Name(Oxide.Core.Libraries.Covalence.IPlayer)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.Name(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState,Oxide.Core.Libraries.Covalence.IPlayer)">
             <summary>
             <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Name"/> placeholder
             </summary>
@@ -19417,6 +19874,46 @@
             <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Ping"/> placeholder
             </summary>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.Permissions(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Player Permissions Placeholder
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.Groups(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Player Groups Placeholder
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.Address(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Player Address Placeholder
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.Country(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Player Country Placeholder
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.CountryEmoji(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Player Flag Placeholder
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.ClanTag(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Player Groups Placeholder
+            </summary>
+            <param name="player"></param>
+            <returns></returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.SteamProfileUrl(Oxide.Core.Libraries.Covalence.IPlayer)">
             <summary>
             Steam Profile Url Placeholder 
@@ -19437,17 +19934,22 @@
             Battle metrics Place Name Url Placeholder
             </summary>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.ServerArmorUrl(Oxide.Core.Libraries.Covalence.IPlayer)">
+            <summary>
+            Battle metrics Place Name Url Placeholder
+            </summary>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.IsLinked(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState,Oxide.Core.Libraries.Covalence.IPlayer)">
             <summary>
             <see cref="M:Oxide.Ext.Discord.Extensions.PlayerExt.IsLinked(Oxide.Core.Libraries.Covalence.IPlayer)"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PlayerPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.PluginPlaceholders">
@@ -19495,35 +19997,35 @@
             Lang message for a plugin
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PluginPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.PluginPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
-        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.RequestErrorPlaceholders">
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.ResponseErrorPlaceholders">
             <summary>
             <see cref="T:Oxide.Ext.Discord.Entities.Api.ResponseError"/> placeholders
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.RequestErrorPlaceholders.HttpCode(Oxide.Ext.Discord.Entities.Api.ResponseError)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ResponseErrorPlaceholders.HttpCode(Oxide.Ext.Discord.Entities.Api.ResponseError)">
             <summary>
             <see cref="P:Oxide.Ext.Discord.Entities.Api.ResponseError.HttpStatusCode"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.RequestErrorPlaceholders.Message(Oxide.Ext.Discord.Entities.Api.ResponseError)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ResponseErrorPlaceholders.Message(Oxide.Ext.Discord.Entities.Api.ResponseError)">
             <summary>
             <see cref="P:Oxide.Ext.Discord.Entities.Api.ResponseError.ResponseMessage"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.RequestErrorPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ResponseErrorPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.ResponseErrorKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.RolePlaceholders">
@@ -19551,12 +20053,12 @@
             <see cref="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Icon"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.RolePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.RolePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.ServerPlaceholders">
@@ -19589,12 +20091,27 @@
             <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Protocol"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ServerPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ServerPlaceholders.Address(Oxide.Core.Libraries.Covalence.IServer)">
+            <summary>
+            <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Address"/> placeholder
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ServerPlaceholders.Port(Oxide.Core.Libraries.Covalence.IServer)">
+            <summary>
+            <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Port"/> placeholder
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ServerPlaceholders.Time(Oxide.Core.Libraries.Covalence.IServer)">
+            <summary>
+            <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Time"/> placeholder
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.ServerPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.SnowflakePlaceholders">
@@ -19607,12 +20124,12 @@
             <see cref="M:Oxide.Ext.Discord.Entities.Snowflake.GetCreationDate"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.SnowflakePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.SnowflakePlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.SnowflakeKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.TimeSpanPlaceholders">
@@ -19670,12 +20187,12 @@
             <see cref="P:System.TimeSpan.TotalMilliseconds"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.TimeSpanPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.TimeSpanPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.TimestampPlaceholders">
@@ -19723,12 +20240,12 @@
             <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.TimestampPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.TimestampPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Default.UserPlaceholders">
@@ -19776,12 +20293,12 @@
             <see cref="M:Oxide.Ext.Discord.Extensions.DiscordUserExt.IsLinked(Oxide.Ext.Discord.Entities.Users.DiscordUser)"/> placeholder
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.UserPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Default.UserPlaceholders.RegisterPlaceholders(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Registers placeholders for the given plugin. 
             </summary>
             <param name="plugin">Plugin to register placeholders for</param>
-            <param name="placeholderPrefix">Prefix to use for the placeholders</param>
+            <param name="keys">Prefix to use for the placeholders</param>
             <param name="dataKey">Data key in <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders">
@@ -19789,88 +20306,111 @@
             Discord Placeholders Library
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.ProcessPlaceholders(System.String,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.HasPlaceholders(System.String)">
             <summary>
-            Process placeholders for the given Text
+            Returns true if the text contains placeholders
+            </summary>
+            <param name="text">Text to check for placeholders</param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.GetPlaceholders(System.String)">
+            <summary>
+            Returns placeholders found in the given text
+            </summary>
+            <param name="text">Text to get placeholders for</param>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.ProcessPlaceholders(System.String,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData,System.Boolean)">
+            <summary>
+            Process placeholders for the given text.
             </summary>
             <param name="text">Text to process placeholders for</param>
             <param name="data">Placeholder Data for the placeholders</param>
+            <param name="autoDispose">Automatically dispose <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> on completion. <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> must also have AutoPool enabled</param>
             <returns>string with placeholders replaced. If no placeholders are found the original string is returned</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.CreateData(Oxide.Core.Plugins.Plugin)">
             <summary>
-            Creates Pooled <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/>
+            Returns a pooled <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> for the given plugin.
+            If you wish to manually pool call the <see cref="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.ManualPool"/> method.
+            If you wish to clone <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> call the <see cref="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Clone"/> method.
             </summary>
             <returns><see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/></returns>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,System.String)">
             <summary>
-            Registers a placeholder static value placeholder
+            Registers a placeholder static value placeholder.
+            Static placeholder value can not be changed.
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder key</param>
             <param name="value">Static string value</param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``1(Oxide.Core.Plugins.Plugin,System.String,System.Func{``0})">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``1(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,System.Func{``0})">
             <summary>
-            Registers a placeholder
+            Registers a placeholder that will call the callback function when the placeholder is called.
+            This function will return TResult data for the placeholder
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder key</param>
             <param name="callback">Callback Method for the placeholder</param>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``1(Oxide.Core.Plugins.Plugin,System.String,System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``1(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
-            Registers a placeholder that uses the dataKey value
+            Registers a placeholder that will take a datakey from <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> and use that as the placeholder value
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder key</param>
             <param name="dataKey"></param>
             <typeparam name="TData">Type that is registered in the PlaceholderData</typeparam>
             <exception cref="T:System.ArgumentNullException">Thrown if placeholder or plugin is null</exception>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,System.String,System.Func{``0,``1})">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,System.Func{``0,``1})">
             <summary>
-            Registers a placeholder of type {T}
+            Registers a placeholder that will pull type T from <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/>. The datakey for T will be the T.GetType().Name
+            Type T will be passed into the callback function and will expect a TResult to be returned from that function.
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder key</param>
             <param name="callback">Callback Method for the placeholder</param>
             <typeparam name="TData">Type of the data key</typeparam>
             <typeparam name="TResult">The return type of the placeholder callback</typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,System.String,System.String,System.Func{``0,``1})">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey,System.Func{``0,``1})">
             <summary>
-            Registers a placeholder of type {T}
+            Registers a placeholder that will pull type T from <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/>. The datakey for T will come from the datakey argument
+            Type T will be passed into the callback function and will expect a TResult to be returned from that function.
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder Key</param>
             <param name="dataKey">The name of the data key in PlaceholderData</param>
             <param name="callback">Callback Method for the placeholder</param>
             <typeparam name="TData">Type of the data key</typeparam>
             <typeparam name="TResult">The return type of the placeholder callback</typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,System.String,System.Func{Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState,``0,``1})">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,System.Func{Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState,``0,``1})">
             <summary>
-            Registers a placeholder of type {T}
+            Registers a placeholder that will pull type T from <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/>. The datakey for T will be the T.GetType().Name
+            Type T will be passed into the callback function along with the current <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState"/> and will expect a TResult to be returned from that function.
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder key</param>
             <param name="callback">Callback Method for the placeholder</param>
             <typeparam name="TData">Type of the data key</typeparam>
             <typeparam name="TResult">The return type of the placeholder callback</typeparam>
             <exception cref="T:System.ArgumentNullException"></exception>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,System.String,System.String,System.Func{Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState,``0,``1})">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.RegisterPlaceholder``2(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey,System.Func{Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState,``0,``1})">
             <summary>
-            Registers a placeholder of type {T}
+            Registers a placeholder that will pull type T from <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/>. The datakey for T will come from the datakey argument
+            Type T will be passed into the callback function along with the current <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState"/> and will expect a TResult to be returned from that function.
             </summary>
             <param name="plugin">Plugin this placeholder is for</param>
-            <param name="placeholder">Placeholder string</param>
+            <param name="key">Placeholder key</param>
             <param name="dataKey">The name of the data key in PlaceholderData</param>
             <param name="callback">Callback Method for the placeholder</param>
             <typeparam name="TData">Type of the data key</typeparam>
@@ -19879,6 +20419,800 @@
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.DiscordPlaceholders.OnPluginUnloaded(Oxide.Core.Plugins.Plugin)">
             <inheritdoc/>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys.Mention">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand.Mention"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys.MentionCustom">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand.MentionCustom(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.AppCommandKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Channels.DiscordChannel"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Channels.DiscordChannel.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Channels.DiscordChannel.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys.Icon">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Channels.DiscordChannel.Icon"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys.Topic">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Channels.DiscordChannel.Topic"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys.Mention">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Channels.DiscordChannel.Mention"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ChannelKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:System.DateTime"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Date">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Date"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Year">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Year"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Month">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Month"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Day">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Day"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Hour">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Hour"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Minute">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Minute"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Second">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Second"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.Millisecond">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.DateTime.Millisecond"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DateTimeKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys">
+            <summary>
+            Default Discord Extension provided Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.AppCommand">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.DiscordApplicationCommand"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Channel">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Channels.DiscordChannel"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.DateTime">
+            <summary>
+            <see cref="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.DateTime"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Guild">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Interaction">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Member">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Guilds.GuildMember"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Message">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Messages.DiscordMessage"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Player">
+            <summary>
+            <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.PlayerTarget">
+            <summary>
+            <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Target Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Plugin">
+            <summary>
+            <see cref="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Plugin"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.ResponseError">
+            <summary>
+            <see cref="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.ResponseError"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Role">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Permissions.DiscordRole"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Server">
+            <summary>
+            <see cref="T:Oxide.Core.Libraries.Covalence.IServer"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Snowflake">
+            <summary>
+            <see cref="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Snowflake"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Timespan">
+            <summary>
+            <see cref="T:System.TimeSpan"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.Timestamp">
+            <summary>
+            Timestamp Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.TimestampNow">
+            <summary>
+            Timestamp Now Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.User">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/> Placeholder Keys
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.DefaultKeys.UserTarget">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/> Target Placeholder Keys
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.Description">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.Description"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.Icon">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.Icon"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.Banner">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.Banner"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.MemberCount">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.DiscordGuild.MemberCount"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.GuildKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.InteractionKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.InteractionKeys.Lang">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction.GetLangMessage(Oxide.Core.Plugins.Plugin,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.InteractionKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MemberKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Guilds.GuildMember"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MemberKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.GuildMember.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MemberKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Guilds.GuildMember.DisplayName"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MemberKeys.Mention">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.Mention"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MemberKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MessageKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Messages.DiscordMessage"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MessageKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MessageKeys.ChannelId">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.ChannelId"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MessageKeys.Content">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Messages.DiscordMessage.Content"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.MessageKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.NameClan">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Name"/> with clan formatting
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.NamePlayerId">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Name"/> with Player ID formatting
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.NameAll">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Name"/> with clan and player ID formatting.
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Connected">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.IsConnected"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Permissions">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> permissions
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Groups">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> groups
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Health">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Health"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.MaxHealth">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.MaxHealth"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Position">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Core.Libraries.Covalence.IPlayer.Position"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Ping">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Ping"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Address">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IPlayer.Address"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.Country">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Country
+            Requires Placeholder API plugin in order to use
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.CountryEmoji">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Country Emoji
+            Requires Placeholder API plugin in order to use
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.ClanTag">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Clan Tag
+            Requires Clans plugin in order to use
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.SteamProfile">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Steam Profile
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.SteamAvatar">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Steam Avatar Image Url
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.BattleMetricsPlayerId">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> BattleMetrics search by player id Url
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.BattleMetricsName">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> BattleMetrics search by player name Url
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.ServerArmorProfile">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/> Server Armor Profile Url
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.IsLinked">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Extensions.PlayerExt.IsLinked(Oxide.Core.Libraries.Covalence.IPlayer)"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PlayerKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Core.Plugins.Plugin"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Plugins.Plugin.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Title">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Plugins.Plugin.Title"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Author">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Plugins.Plugin.Author"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Version">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Plugins.Plugin.Version"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Description">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Plugins.Plugin.Description"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Fullname">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Extensions.PluginExt.FullName(Oxide.Core.Plugins.Plugin)"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.HookTime">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Plugins.Plugin.TotalHookTime"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.Lang">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Core.Libraries.Lang.GetMessage(System.String,Oxide.Core.Plugins.Plugin,System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.PluginKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ResponseErrorKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Api.ResponseError"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ResponseErrorKeys.Code">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Api.ResponseError.HttpStatusCode"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ResponseErrorKeys.Message">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Api.ResponseErrorMessage.Message"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ResponseErrorKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Permissions.DiscordRole"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys.Mention">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Mention"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys.Icon">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Permissions.DiscordRole.Icon"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.RoleKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Core.Libraries.Covalence.IServer"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Name">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Name"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Players">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Players"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.MaxPlayers">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.MaxPlayers"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Version">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Version"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Protocol">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Protocol"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Address">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Address"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Port">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Port"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.Time">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Core.Libraries.Covalence.IServer.Time"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.ServerKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.SnowflakeKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Snowflake"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.SnowflakeKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="F:Oxide.Ext.Discord.Entities.Snowflake.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.SnowflakeKeys.Created">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Entities.Snowflake.GetCreationDate"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.SnowflakeKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:System.TimeSpan"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.Time">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="T:System.TimeSpan"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.Days">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.Days"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.Hours">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.Hours"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.Minutes">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.Minutes"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.Seconds">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.Seconds"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.Milliseconds">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.Milliseconds"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.TotalDays">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.TotalDays"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.TotalHours">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.TotalHours"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.TotalMinutes">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.TotalMinutes"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.TotalSeconds">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.TotalSeconds"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.TotalMilliseconds">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:System.TimeSpan.TotalMilliseconds"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimespanKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:System.Int64"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.Time">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.ShortTime">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.ShortTime"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.LongTime">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.LongTime"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.ShortDate">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.ShortDate"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.LongDate">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.LongDate"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.ShortDateTime">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.ShortDateTime"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.LongDateTime">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.LongDateTime"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.RelativeTime">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Helpers.DiscordFormatting.UnixTimestamp(System.Int64,Oxide.Ext.Discord.Helpers.TimestampStyles)"/> formatted as <see cref="F:Oxide.Ext.Discord.Helpers.TimestampStyles.RelativeTime"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.TimestampKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys">
+            <summary>
+            Placeholder Keys for <see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.Id">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.Id"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.Username">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.Username"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.Discriminator">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.Discriminator"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.Fullname">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.FullUserName"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.AvatarUrl">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.GetAvatarUrl"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.BannerUrl">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.GetBannerUrl"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.Mention">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="P:Oxide.Ext.Discord.Entities.Users.DiscordUser.Mention"/>
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.IsLinked">
+            <summary>
+            <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey"/> for <see cref="M:Oxide.Ext.Discord.Extensions.DiscordUserExt.IsLinked(Oxide.Ext.Discord.Entities.Users.DiscordUser)"/>
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.Keys.UserKeys.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">Placeholder Key Prefix</param>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData">
             <summary>
@@ -19907,11 +21241,23 @@
             <param name="guild">Guild to add</param>
             <returns>This</returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemoveGuild">
+            <summary>
+            Removes guild placeholder data
+            </summary>
+            <returns>This</returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddMessage(Oxide.Ext.Discord.Entities.Messages.DiscordMessage)">
             <summary>
             Add a <see cref="T:Oxide.Ext.Discord.Entities.Messages.DiscordMessage"/>
             </summary>
             <param name="message">Message to add</param>
+            <returns>This</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemoveMessage">
+            <summary>
+            Removes message placeholder data
+            </summary>
             <returns>This</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddGuildMember(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Ext.Discord.Entities.Snowflake)">
@@ -19930,11 +21276,30 @@
             <param name="member">Member to add</param>
             <returns></returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemoveGuildMember">
+            <summary>
+            Removes guild member data
+            </summary>
+            <returns>This</returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddUser(Oxide.Ext.Discord.Entities.Users.DiscordUser)">
             <summary>
             Adds a <see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/>
             </summary>
             <param name="user">User to add</param>
+            <returns>This</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddUserTarget(Oxide.Ext.Discord.Entities.Users.DiscordUser)">
+            <summary>
+            Adds a <see cref="T:Oxide.Ext.Discord.Entities.Users.DiscordUser"/>
+            </summary>
+            <param name="user">User to add</param>
+            <returns>This</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemoveUser">
+            <summary>
+            Removes user placeholder data
+            </summary>
             <returns>This</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddRole(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Ext.Discord.Entities.Snowflake)">
@@ -19953,6 +21318,12 @@
             <param name="role">Role to add</param>
             <returns>This</returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemoveRole">
+            <summary>
+            Removes role placeholder data
+            </summary>
+            <returns>This</returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddChannel(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,System.Nullable{Oxide.Ext.Discord.Entities.Snowflake})">
             <summary>
             Adds a <see cref="T:Oxide.Ext.Discord.Entities.Channels.DiscordChannel"/> by <see cref="T:Oxide.Ext.Discord.Clients.DiscordClient"/>, ChannelId, and Optional GuildId
@@ -19969,6 +21340,12 @@
             <param name="channel">Channel to add</param>
             <returns>This</returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemoveChannel">
+            <summary>
+            Removes channel placeholder data
+            </summary>
+            <returns>This</returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddInteraction(Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction)">
             <summary>
             Adds a <see cref="T:Oxide.Ext.Discord.Entities.Interactions.DiscordInteraction"/>
@@ -19981,6 +21358,12 @@
             Adds a <see cref="T:Oxide.Core.Libraries.Covalence.IPlayer"/>
             </summary>
             <param name="player">player to add</param>
+            <returns>This</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.RemovePlayer">
+            <summary>
+            Removes player placeholder data
+            </summary>
             <returns>This</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddTarget(Oxide.Core.Libraries.Covalence.IPlayer)">
@@ -19997,11 +21380,25 @@
             <param name="plugin">Plugin to add</param>
             <returns>This</returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddTimestamp(System.DateTimeOffset)">
+            <summary>
+            Adds a Unix Timestamp
+            </summary>
+            <param name="timestamp">Unix timestamp</param>
+            <returns>This</returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddTimestamp(System.Int64)">
             <summary>
             Adds a Unix Timestamp
             </summary>
             <param name="timestamp">Unix timestamp</param>
+            <returns>This</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddTimeSpan(System.TimeSpan)">
+            <summary>
+            Adds a <see cref="T:System.TimeSpan"/>
+            </summary>
+            <param name="timespan">Timespan</param>
             <returns>This</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.AddSnowflake(Oxide.Ext.Discord.Entities.Snowflake)">
@@ -20018,12 +21415,18 @@
             <param name="error">RequestError to add</param>
             <returns>This</returns>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Add``1(System.String,``0)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Add``1(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey,``0)">
             <summary>
             Adds the data with the given name
             </summary>
             <param name="name">Name of the data key</param>
             <param name="obj">Object to add</param>
+            <returns>This</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Remove(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
+            <summary>
+            Removes placeholder data key with the given name
+            </summary>
             <returns>This</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Get``1">
@@ -20034,7 +21437,7 @@
             <typeparam name="T">Type to return</typeparam>
             <returns>{T}</returns>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Get``1(System.String)">
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.Get``1(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
             <summary>
             Returns the object with the given type of T
             If the object is not found the default(T) is returned
@@ -20062,6 +21465,37 @@
             <returns></returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData.EnterPool">
+            <inheritdoc/>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey">
+            <summary>
+            Represents a Placeholder Data Key
+            This is the key used to store a value into Placeholder Data
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.Key">
+            <summary>
+            Value of the key
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.IsValid">
+            <summary>
+            If the <see cref="F:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.Key"/> is a valid value
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="key">Value of the key</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.Equals(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderDataKey.GetHashCode">
             <inheritdoc/>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderFormatting">
@@ -20117,13 +21551,59 @@
             <param name="placeholderState"><see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState"/> for the placeholder</param>
             <param name="position"><see cref="T:Oxide.Core.Libraries.Covalence.GenericPosition"/> position to format and replace</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderFormatting.ApplyPlaceholder(System.String,Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData)">
+        <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey">
             <summary>
-            Applies the placeholder to the text
-            If <see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> is null text is returned and no placeholders are processed
+            Represents a Placeholder Key. This is the key for placeholder usage and lookup
             </summary>
-            <param name="text">Text to apply placeholders to</param>
-            <param name="data"><see cref="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderData"/> for the placeholder</param>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.Placeholder">
+            <summary>
+            Placeholder Key
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.IsValid">
+            <summary>
+            If <see cref="F:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.Placeholder"/> Is a Valid Key
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="placeholder">Placeholder Value</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="prefix">
+            Prefix for the placeholder Key.
+            Pass in the nameof the plugin type for the Placeholder key
+            <code>nameof(DiscordExtension)</code>
+            </param>
+            <param name="key">Placeholder Value</param>
+            <param name="format">Format to be applied (Optional)</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.ToString">
+            <summary>
+            Returns the PlaceholderKey formatted as a usable placeholder in text
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.Equals(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.op_Implicit(Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey)~System.String">
+            <summary>
+            Implicitly converts to <see cref="T:System.String"/> by calling the <see cref="M:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderKey.ToString"/> method.
+            </summary>
+            <param name="key"></param>
             <returns></returns>
         </member>
         <member name="T:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState">
@@ -20136,9 +21616,9 @@
             Placeholder Data for the state
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState.Name">
+        <member name="P:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState.Key">
             <summary>
-            Name of the placeholder
+            Key of the placeholder
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Libraries.Placeholders.PlaceholderState.Format">
@@ -20205,6 +21685,20 @@
             </summary>
             <param name="client">Client to compare against</param>
             <returns>True if same bot client; false otherwise</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Subscription.DiscordSubscription.IsForPlugin(Oxide.Core.Plugins.Plugin)">
+            <summary>
+            Returns if this subscription is for this plugin
+            </summary>
+            <param name="plugin">Plugin to check</param>
+            <returns>True if the subscription is for this plugin; False otherwise</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.Subscription.DiscordSubscription.IsForChannel(Oxide.Ext.Discord.Entities.Snowflake)">
+            <summary>
+            Returns if this subscription is for the given channel
+            </summary>
+            <param name="channelId">Channel ID to check</param>
+            <returns>True if the subscription is for this channel; False otherwise</returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Subscription.DiscordSubscription.Invoke(Oxide.Ext.Discord.Entities.Messages.DiscordMessage)">
             <summary>
@@ -20553,13 +22047,6 @@
             Constructor
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Templates.Commands.ArgumentLocalization.#ctor(System.String,System.String)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="name"></param>
-            <param name="description"></param>
-        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Templates.Commands.ArgumentLocalization.#ctor(Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.CommandOption,Oxide.Ext.Discord.Libraries.Locale.DiscordLocale)">
             <summary>
             Constructor
@@ -20638,13 +22125,6 @@
             <summary>
             Constructor
             </summary>
-        </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.Templates.Commands.CommandLocalization.#ctor(System.String,System.String)">
-            <summary>
-            Constructor
-            </summary>
-            <param name="name"></param>
-            <param name="description"></param>
         </member>
         <member name="M:Oxide.Ext.Discord.Libraries.Templates.Commands.CommandLocalization.#ctor(Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands.CommandCreate,Oxide.Ext.Discord.Libraries.Locale.DiscordLocale)">
             <summary>
@@ -21953,11 +23433,12 @@
             Build Discord Extension Setup Data for a plugin
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Plugins.Setup.PluginSetup.#ctor(Oxide.Core.Plugins.Plugin)">
+        <member name="M:Oxide.Ext.Discord.Plugins.Setup.PluginSetup.#ctor(Oxide.Core.Plugins.Plugin,Oxide.Ext.Discord.Logging.ILogger)">
             <summary>
             Constructor
             </summary>
             <param name="plugin">Plugin the data is for</param>
+            <param name="logger">Logger</param>
         </member>
         <member name="T:Oxide.Ext.Discord.Pooling.BasePool`2">
             <summary>
@@ -22464,6 +23945,12 @@
             Constructor for the promise
             </summary>
         </member>
+        <member name="M:Oxide.Ext.Discord.Promises.Promise.Create">
+            <summary>
+            Creates a Promise
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Promises.Promise.Resolved">
             <summary>
             Returns a promise that has been resolved
@@ -22959,7 +24446,7 @@
         </member>
         <member name="M:Oxide.Ext.Discord.Rest.Buckets.Bucket.QueueRequest(Oxide.Ext.Discord.Rest.Requests.RequestHandler)">
             <summary>
-            Queues a new request for the buck
+            Queues a new request for the bucket
             </summary>
             <param name="handler"><see cref="T:Oxide.Ext.Discord.Rest.Requests.RequestHandler"/> to be queued</param>
         </member>
@@ -24236,101 +25723,6 @@
         <member name="F:Oxide.Ext.Discord.WebSockets.SocketState.Disconnected">
             <summary>
             Websocket is currently disconnect and not waiting to connect
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.IsDirty">
-            <summary>
-            Gets whether the current repository is dirty.
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.IsDirtyString">
-            <summary>
-            => @"false"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.RepositoryUrl">
-            <summary>
-            => @"https://github.com/dassjosh/Oxide.Ext.Discord.git"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.Branch">
-            <summary>
-            => @"develop"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.Commit">
-            <summary>
-            => @"986f01f0"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.Sha">
-            <summary>
-            => @"986f01f0396526892cdb9250570ac6a53c1092ed"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.CommitDate">
-            <summary>
-            => @"2023-06-24T14:54:16-05:00"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.Commits">
-            <summary>
-            => @"597"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.Tag">
-            <summary>
-            => @"2.1.9-597-g986f01f0"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.BaseTag">
-            <summary>
-            => @"2.1.9"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.BaseVersion.Major">
-            <summary>
-            => @"2"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.BaseVersion.Minor">
-            <summary>
-            => @"1"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.BaseVersion.Patch">
-            <summary>
-            => @"9"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.SemVer.Major">
-            <summary>
-            => @"2"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.SemVer.Minor">
-            <summary>
-            => @"1"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.SemVer.Patch">
-            <summary>
-            => @"606"
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.SemVer.Label">
-            <summary>
-            => @""
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.SemVer.DashLabel">
-            <summary>
-            => @""
-            </summary>
-        </member>
-        <member name="F:ThisAssembly.Git.SemVer.Source">
-            <summary>
-            => @"Tag"
             </summary>
         </member>
     </members>
