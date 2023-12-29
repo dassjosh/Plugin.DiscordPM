@@ -4,39 +4,20 @@ using System.ComponentModel;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using Oxide.Core;
 using Oxide.Core.Libraries.Covalence;
 using Oxide.Core.Plugins;
-using Oxide.Ext.Discord.Attributes.ApplicationCommands;
-using Oxide.Ext.Discord.Attributes.Pooling;
-using Oxide.Ext.Discord.Builders.ApplicationCommands;
-using Oxide.Ext.Discord.Builders.Interactions;
-using Oxide.Ext.Discord.Builders.Interactions.AutoComplete;
+using Oxide.Ext.Discord.Attributes;
+using Oxide.Ext.Discord.Builders;
 using Oxide.Ext.Discord.Cache;
 using Oxide.Ext.Discord.Clients;
 using Oxide.Ext.Discord.Connections;
 using Oxide.Ext.Discord.Constants;
 using Oxide.Ext.Discord.Entities;
-using Oxide.Ext.Discord.Entities.Api;
-using Oxide.Ext.Discord.Entities.Channels;
-using Oxide.Ext.Discord.Entities.Gateway;
-using Oxide.Ext.Discord.Entities.Guilds;
-using Oxide.Ext.Discord.Entities.Interactions;
-using Oxide.Ext.Discord.Entities.Interactions.ApplicationCommands;
-using Oxide.Ext.Discord.Entities.Interactions.Response;
-using Oxide.Ext.Discord.Entities.Messages;
-using Oxide.Ext.Discord.Entities.Permissions;
 using Oxide.Ext.Discord.Extensions;
 using Oxide.Ext.Discord.Interfaces;
-using Oxide.Ext.Discord.Libraries.Placeholders;
-using Oxide.Ext.Discord.Libraries.Placeholders.Default;
-using Oxide.Ext.Discord.Libraries.Placeholders.Keys;
-using Oxide.Ext.Discord.Libraries.Templates;
-using Oxide.Ext.Discord.Libraries.Templates.Commands;
-using Oxide.Ext.Discord.Libraries.Templates.Embeds;
-using Oxide.Ext.Discord.Libraries.Templates.Messages;
+using Oxide.Ext.Discord.Libraries;
 using Oxide.Ext.Discord.Logging;
-using Oxide.Ext.Discord.Pooling;
+using Oxide.Ext.Discord.Types;
 
 #if RUST
 using UnityEngine;
@@ -47,10 +28,11 @@ namespace Oxide.Plugins
     // ReSharper disable once UnusedType.Global
     [Info("Discord PM", "MJSU", "3.0.0")]
     [Description("Allows private messaging through discord")]
-    internal class DiscordPM : CovalencePlugin, IDiscordPlugin
+    internal class DiscordPM : CovalencePlugin, IDiscordPlugin, IDiscordPool
     {
         #region Class Fields
         public DiscordClient Client { get; set; }
+        public DiscordPluginPool Pool { get; set; }
         
         private PluginConfig _pluginConfig;
 
@@ -60,8 +42,6 @@ namespace Oxide.Plugins
         private const string NameArg = "name";
         private const string MessageArg = "message";
 
-        [DiscordPool]
-        private DiscordPluginPool _pool;
         private readonly DiscordPlaceholders _placeholders = GetLibrary<DiscordPlaceholders>();
         private readonly DiscordMessageTemplates _templates = GetLibrary<DiscordMessageTemplates>();
         private readonly DiscordCommandLocalizations _localizations = GetLibrary<DiscordCommandLocalizations>();
@@ -458,9 +438,9 @@ namespace Oxide.Plugins
         #region Helpers
         public bool TryFindPlayer(IPlayer from, string name, out IPlayer target)
         {
-            List<IPlayer> foundPlayers = _pool.GetList<IPlayer>();
-            List<IPlayer> activePlayers = _pool.GetList<IPlayer>();
-            List<IPlayer> linkedPlayers = _pool.GetList<IPlayer>();
+            List<IPlayer> foundPlayers = Pool.GetList<IPlayer>();
+            List<IPlayer> activePlayers = Pool.GetList<IPlayer>();
+            List<IPlayer> linkedPlayers = Pool.GetList<IPlayer>();
             
             try
             {
@@ -541,9 +521,9 @@ namespace Oxide.Plugins
             }
             finally
             { 
-                _pool.FreeList(foundPlayers);
-                _pool.FreeList(linkedPlayers);
-                _pool.FreeList(activePlayers);
+                Pool.FreeList(foundPlayers);
+                Pool.FreeList(linkedPlayers);
+                Pool.FreeList(activePlayers);
             }
         }
 

@@ -141,11 +141,6 @@
             <param name="name">Name of the command</param>
             <param name="isLocalized">If the command name is the localization key for the command</param>
         </member>
-        <member name="T:Oxide.Ext.Discord.Attributes.DiscordPoolAttribute">
-            <summary>
-            Attribute for setting <see cref="T:Oxide.Ext.Discord.Types.DiscordPluginPool"/> on a plugin
-            </summary>
-        </member>
         <member name="T:Oxide.Ext.Discord.Builders.Ansi.AnsiBuilder">
             <summary>
             Builder for ANSI colored text
@@ -6668,6 +6663,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Entities.DiscordColor.ToHex">
+            <summary>
+            Returns the color as a hex color code
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Oxide.Ext.Discord.Entities.DefaultReaction">
             <summary>
             Represents <a href="https://discord.com/developers/docs/resources/channel#followed-channel-object">Default Reaction Structure</a>
@@ -8088,11 +8089,6 @@
             - Guild Message.Content
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.GatewayIntents.MessageContentIntent">
-            <summary>
-            Old name for GatewayIntents.MessageContent
-            </summary>
-        </member>
         <member name="F:Oxide.Ext.Discord.Entities.GatewayIntents.GuildScheduledEvents">
             <summary>
             - GUILD_SCHEDULED_EVENT_CREATE
@@ -9111,11 +9107,6 @@
             Represents <a href="https://discord.com/developers/docs/resources/guild#create-guild-ban">Guild Ban Create Structure</a>
             </summary>
         </member>
-        <member name="P:Oxide.Ext.Discord.Entities.GuildBanCreate.DeleteMessageDays">
-            <summary>
-            Number of days to delete messages for (0-7)
-            </summary>
-        </member>
         <member name="P:Oxide.Ext.Discord.Entities.GuildBanCreate.DeleteMessageSeconds">
             <summary>
             Number of seconds to delete messages for, between 0 and 604800 (7 days)
@@ -9170,11 +9161,6 @@
         <member name="P:Oxide.Ext.Discord.Entities.GuildCreate.Name">
             <summary>
             Name of the guild (2-100 characters)
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Entities.GuildCreate.Region">
-            <summary>
-            Voice region id
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.GuildCreate.Icon">
@@ -9334,11 +9320,6 @@
             Guild has enabled Membership Screening
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.GuildFeatures.MonetizationEnabled">
-            <summary>
-            Guild has enabled monetization
-            </summary>
-        </member>
         <member name="F:Oxide.Ext.Discord.Entities.GuildFeatures.MoreStickers">
             <summary>
             Guild has increased custom sticker slots
@@ -9362,11 +9343,6 @@
         <member name="F:Oxide.Ext.Discord.Entities.GuildFeatures.RaidAlertsDisabled">
             <summary>
             Guild has disabled alerts for join raids in the configured safety alerts channel
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.GuildFeatures.PrivateThreads">
-            <summary>
-            Guild has access to create private threads
             </summary>
         </member>
         <member name="F:Oxide.Ext.Discord.Entities.GuildFeatures.RoleIcons">
@@ -11902,6 +11878,13 @@
             </summary>
             <param name="client">Client to use</param>
         </member>
+        <member name="M:Oxide.Ext.Discord.Entities.DiscordInteraction.GetOriginalResponse(Oxide.Ext.Discord.Clients.DiscordClient)">
+            <summary>
+            Gets the initial Interaction response
+            See <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#get-original-interaction-response">Get Original Interaction Response</a>
+            </summary>
+            <param name="client">Client to use</param>
+        </member>
         <member name="M:Oxide.Ext.Discord.Entities.DiscordInteraction.EditOriginalResponse(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.MessageUpdate)">
             <summary>
             Edits the initial Interaction response
@@ -11942,6 +11925,15 @@
             </summary>
             <param name="client">Client to use</param>
             <param name="builder">Builder for the follow up</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Entities.DiscordInteraction.GetFollowUpMessage(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Ext.Discord.Entities.CommandFollowupUpdate)">
+            <summary>
+            Get a followup message for an Interaction
+            See <a href="https://discord.com/developers/docs/interactions/receiving-and-responding#get-followup-message">Get Followup Message</a>
+            </summary>
+            <param name="client">Client to use</param>
+            <param name="messageId">Message ID of the follow up message</param>
+            <param name="edit">Updated message</param>
         </member>
         <member name="M:Oxide.Ext.Discord.Entities.DiscordInteraction.EditFollowUpMessage(Oxide.Ext.Discord.Clients.DiscordClient,Oxide.Ext.Discord.Entities.Snowflake,Oxide.Ext.Discord.Entities.CommandFollowupUpdate)">
             <summary>
@@ -16462,56 +16454,6 @@
             User is an <a href="https://support-dev.discord.com/hc/articles/10113997751447">Active Developer</a>
             </summary>
         </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.DiscordEmployee">
-            <summary>
-            Flag given to users who are a Discord employee.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.PartneredServerOwner">
-            <summary>
-            Flag given to users who are owners of a partnered Discord server.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.HyperSquadEvents">
-            <summary>
-            Flag given to users in HypeSquad events.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.HouseBravery">
-            <summary>
-            Flag given to users who are in the HypeSquad House of Bravery.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.HouseBrilliance">
-            <summary>
-            Flag given to users who are in the HypeSquad House of Brilliance.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.HouseBalance">
-            <summary>
-            Flag given to users who are in the HypeSquad House of Balance.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.EarlySupporter">
-            <summary>
-            Flag given to users who subscribed to Nitro before games were added.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.TeamUser">
-            <summary>
-            Flag given to users who are part of a team.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.EarlyVerifiedBotDeveloper">
-            <summary>
-             Flag given to users that developed bots and early verified their accounts.
-            </summary>
-        </member>
-        <member name="F:Oxide.Ext.Discord.Entities.UserFlags.DiscordCertifiedModerator">
-            <summary>
-            Flag given to users that are discord certified moderators
-            </summary>
-        </member>
         <member name="T:Oxide.Ext.Discord.Entities.UserGuildsRequest">
             <summary>
             Represents a <a href="https://discord.com/developers/docs/resources/user#get-current-user-guilds-query-string-params">Users Guild Request</a>
@@ -16621,11 +16563,6 @@
         <member name="P:Oxide.Ext.Discord.Entities.VoiceRegion.Name">
             <summary>
             Name of the region
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Entities.VoiceRegion.Vip">
-            <summary>
-            True if this is a vip-only server
             </summary>
         </member>
         <member name="P:Oxide.Ext.Discord.Entities.VoiceRegion.Optimal">
@@ -17616,17 +17553,6 @@
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="T:Oxide.Ext.Discord.Extensions.DiscordColorExt">
-            <summary>
-            Extensions for Discord Color
-            </summary>
-        </member>
-        <member name="M:Oxide.Ext.Discord.Extensions.DiscordColorExt.ToHex(Oxide.Ext.Discord.Entities.DiscordColor)">
-            <summary>
-            Returns the color as a hex color code
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:Oxide.Ext.Discord.Extensions.DiscordUserExt">
             <summary>
             Adds extension methods to Discord User to allow sending server chat commands to the player
@@ -17771,19 +17697,6 @@
             <param name="right">Right argument</param>
             <typeparam name="T">Type of IComparable{T}</typeparam>
             <returns>Left if greater than or equal to right else right</returns>
-        </member>
-        <member name="T:Oxide.Ext.Discord.Extensions.PlaceholderKeyExt">
-            <summary>
-            Extensions for placeholder keys
-            </summary>
-        </member>
-        <member name="M:Oxide.Ext.Discord.Extensions.PlaceholderKeyExt.WithFormat(Oxide.Ext.Discord.Libraries.PlaceholderKey,System.String)">
-            <summary>
-            Applies a format to a given <see cref="T:Oxide.Ext.Discord.Libraries.PlaceholderKey"/>
-            </summary>
-            <param name="key"><see cref="T:Oxide.Ext.Discord.Libraries.PlaceholderKey"/> to apply the format to</param>
-            <param name="format">Format to be applied</param>
-            <returns>string placeholder containing the placeholder with the given format</returns>
         </member>
         <member name="T:Oxide.Ext.Discord.Extensions.PlayerExt">
             <summary>
@@ -18529,6 +18442,28 @@
             <param name="color">Color of the text</param>
             <returns></returns>
         </member>
+        <member name="M:Oxide.Ext.Discord.Helpers.ServerFormatting.Bold(System.String)">
+            <summary>
+            Bold the Text
+            </summary>
+            <param name="text"></param>
+            <returns>Bold text formatting</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Helpers.ServerFormatting.Italic(System.String)">
+            <summary>
+            Italics the Text
+            </summary>
+            <param name="text"></param>
+            <returns>Italic text formatting</returns>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Helpers.ServerFormatting.Size(System.String,System.Int32)">
+            <summary>
+            Font size formatted text
+            </summary>
+            <param name="text"></param>
+            <param name="size">Font size for the text</param>
+            <returns>Font size text formatting</returns>
+        </member>
         <member name="T:Oxide.Ext.Discord.Helpers.TimeHelpers">
             <summary>
             Helper methods relating to time
@@ -18648,41 +18583,6 @@
             </summary>
             <param name="update">Update data to apply</param>
         </member>
-        <member name="T:Oxide.Ext.Discord.Interfaces.IDiscordPlugin">
-            <summary>
-            Represents a plugin that uses the Discord Extension
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Name">
-            <summary>
-            Name of the plugin
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Title">
-            <summary>
-            Title of the plugin
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Description">
-            <summary>
-            Description of the plugin
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Author">
-            <summary>
-            Author of the plugin
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Version">
-            <summary>
-            Version of the plugin
-            </summary>
-        </member>
-        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Client">
-            <summary>
-            Gets / Sets the DiscordClient on a plugin
-            </summary>
-        </member>
         <member name="T:Oxide.Ext.Discord.Interfaces.IDiscordQueryString">
             <summary>
             Interface for Discord Query Strings
@@ -18776,6 +18676,41 @@
         <member name="M:Oxide.Ext.Discord.Interfaces.ILogger.Shutdown">
             <summary>
             Shuts down the logger
+            </summary>
+        </member>
+        <member name="T:Oxide.Ext.Discord.Interfaces.IDiscordPlugin">
+            <summary>
+            Represents a plugin that uses the Discord Extension
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.IDiscordPlugin.Client">
+            <summary>
+            Gets / Sets the DiscordClient on a plugin
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.IPluginBase.Name">
+            <summary>
+            Name of the plugin
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.IPluginBase.Title">
+            <summary>
+            Title of the plugin
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.IPluginBase.Description">
+            <summary>
+            Description of the plugin
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.IPluginBase.Author">
+            <summary>
+            Author of the plugin
+            </summary>
+        </member>
+        <member name="P:Oxide.Ext.Discord.Interfaces.IPluginBase.Version">
+            <summary>
+            Version of the plugin
             </summary>
         </member>
         <member name="T:Oxide.Ext.Discord.Interfaces.IPendingPromise">
@@ -19151,6 +19086,13 @@
             <param name="name">Name of the field</param>
         </member>
         <member name="M:Oxide.Ext.Discord.Logging.DebugLogger.AppendField(System.String,System.String)">
+            <summary>
+            Appends a field into the logger
+            </summary>
+            <param name="name">Name of the field</param>
+            <param name="value">Value of the field</param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Logging.DebugLogger.AppendField(System.String,System.ReadOnlySpan{System.Char})">
             <summary>
             Appends a field into the logger
             </summary>
@@ -20203,13 +20145,13 @@
             </summary>
             <param name="logger">Logger for Discord Link</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.DiscordLink.AddLinkPlugin(Oxide.Ext.Discord.Libraries.IDiscordLinkPlugin)">
+        <member name="M:Oxide.Ext.Discord.Libraries.DiscordLink.AddLinkPlugin(Oxide.Ext.Discord.Libraries.IDiscordLink)">
             <summary>
             Adds a link plugin to be the plugin used with the Discord Link library
             </summary>
-            <param name="plugin"></param>
+            <param name="link"></param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.DiscordLink.RemoveLinkPlugin(Oxide.Ext.Discord.Libraries.IDiscordLinkPlugin)">
+        <member name="M:Oxide.Ext.Discord.Libraries.DiscordLink.RemoveLinkPlugin(Oxide.Ext.Discord.Libraries.IDiscordLink)">
             <summary>
             Removes a link plugin from the Discord Link library
             </summary>
@@ -20359,12 +20301,12 @@
         <member name="M:Oxide.Ext.Discord.Libraries.DiscordLink.LogDebug(Oxide.Ext.Discord.Logging.DebugLogger)">
             <inheritdoc/>
         </member>
-        <member name="T:Oxide.Ext.Discord.Libraries.IDiscordLinkPlugin">
+        <member name="T:Oxide.Ext.Discord.Libraries.IDiscordLink">
             <summary>
             Represents a plugin that supports Discord Link library
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Libraries.IDiscordLinkPlugin.GetPlayerIdToDiscordIds">
+        <member name="M:Oxide.Ext.Discord.Libraries.IDiscordLink.GetPlayerIdToDiscordIds">
             <summary>
             Returns a <see cref="T:System.Collections.Generic.IDictionary`2"/> of Steam ID's to Discord ID's
             </summary>
@@ -22662,6 +22604,13 @@
             <param name="key">Placeholder Value</param>
             <param name="format">Format to be applied (Optional)</param>
         </member>
+        <member name="M:Oxide.Ext.Discord.Libraries.PlaceholderKey.WithFormat(System.String)">
+            <summary>
+            Applies a format to a given <see cref="T:Oxide.Ext.Discord.Libraries.PlaceholderKey"/>
+            </summary>
+            <param name="format">Format to be applied</param>
+            <returns>string placeholder containing the placeholder with the given format</returns>
+        </member>
         <member name="M:Oxide.Ext.Discord.Libraries.PlaceholderKey.ToString">
             <summary>
             Returns the PlaceholderKey formatted as a usable placeholder in text
@@ -24228,6 +24177,11 @@
             Data to be sent with the request
             </summary>
         </member>
+        <member name="F:Oxide.Ext.Discord.Rest.BaseRequest.Options">
+            <summary>
+            Options for the request
+            </summary>
+        </member>
         <member name="F:Oxide.Ext.Discord.Rest.BaseRequest.Client">
             <summary>
             Discord Client making the request
@@ -24243,7 +24197,7 @@
             Logger for the request
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.BaseRequest.Init(Oxide.Ext.Discord.Clients.DiscordClient,System.Net.Http.HttpClient,Oxide.Core.Libraries.RequestMethod,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.BaseRequest.Init(Oxide.Ext.Discord.Clients.DiscordClient,System.Net.Http.HttpClient,Oxide.Core.Libraries.RequestMethod,System.String,System.Object,Oxide.Ext.Discord.Rest.RequestOptions)">
             <summary>
             Initializes the request
             </summary>
@@ -24274,7 +24228,7 @@
             Represents a Request that does not return data
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.Request.CreateRequest(Oxide.Ext.Discord.Types.DiscordPluginPool,Oxide.Ext.Discord.Clients.DiscordClient,System.Net.Http.HttpClient,Oxide.Core.Libraries.RequestMethod,System.String,System.Object,Oxide.Ext.Discord.Interfaces.IPendingPromise)">
+        <member name="M:Oxide.Ext.Discord.Rest.Request.CreateRequest(Oxide.Ext.Discord.Types.DiscordPluginPool,Oxide.Ext.Discord.Clients.DiscordClient,System.Net.Http.HttpClient,Oxide.Core.Libraries.RequestMethod,System.String,System.Object,Oxide.Ext.Discord.Interfaces.IPendingPromise,Oxide.Ext.Discord.Rest.RequestOptions)">
             <summary>
             Creates a REST API request that returns type of T from the response
             </summary>
@@ -24285,6 +24239,7 @@
             <param name="route">Route for the request</param>
             <param name="data">Data being passed into the request. Null if no data is passed</param>
             <param name="promise">Promise for the request</param>
+            <param name="options">Options for the request</param>
             <returns>A <see cref="T:Oxide.Ext.Discord.Rest.Request`1"/></returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Rest.Request.OnRequestSuccess(Oxide.Ext.Discord.Entities.RequestResponse)">
@@ -24354,6 +24309,28 @@
         <member name="M:Oxide.Ext.Discord.Rest.RequestHandler.LogDebug(Oxide.Ext.Discord.Logging.DebugLogger)">
             <inheritdoc/>
         </member>
+        <member name="T:Oxide.Ext.Discord.Rest.RequestOptions">
+            <summary>
+            Options the the REST request
+            </summary>
+        </member>
+        <member name="F:Oxide.Ext.Discord.Rest.RequestOptions.IgnoreRateLimit">
+            <summary>
+            If the request should ignore global rate limits
+            </summary>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Rest.RequestOptions.#ctor(System.Boolean)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="ignoreRateLimit"></param>
+        </member>
+        <member name="M:Oxide.Ext.Discord.Rest.RequestOptions.SkipRateLimit">
+            <summary>
+            The request should ignore rate limits
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Oxide.Ext.Discord.Rest.RequestStatus">
             <summary>
             Discord API Request Status
@@ -24395,7 +24372,7 @@
             Callback to call if the request completed successfully
             </summary>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.Request`1.CreateRequest(Oxide.Ext.Discord.Types.DiscordPluginPool,Oxide.Ext.Discord.Clients.DiscordClient,System.Net.Http.HttpClient,Oxide.Core.Libraries.RequestMethod,System.String,System.Object,Oxide.Ext.Discord.Interfaces.IPendingPromise{`0})">
+        <member name="M:Oxide.Ext.Discord.Rest.Request`1.CreateRequest(Oxide.Ext.Discord.Types.DiscordPluginPool,Oxide.Ext.Discord.Clients.DiscordClient,System.Net.Http.HttpClient,Oxide.Core.Libraries.RequestMethod,System.String,System.Object,Oxide.Ext.Discord.Interfaces.IPendingPromise{`0},Oxide.Ext.Discord.Rest.RequestOptions)">
             <summary>
             Creates a REST API request that returns type of T from the response
             </summary>
@@ -24406,6 +24383,7 @@
             <param name="route">Route for the request</param>
             <param name="data">Data being passed into the request. Null if no data is passed</param>
             <param name="promise">Promise for the request</param>
+            <param name="options">Options for the request</param>
             <returns>A <see cref="T:Oxide.Ext.Discord.Rest.Request`1"/></returns>
         </member>
         <member name="M:Oxide.Ext.Discord.Rest.Request`1.OnRequestSuccess(Oxide.Ext.Discord.Entities.RequestResponse)">
@@ -24449,40 +24427,44 @@
             <param name="client">Client the request is for</param>
             <param name="logger">Logger from the client</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Get``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Get``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Get Request with TResult response
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
+            <param name="options">Options for the request</param>
             <typeparam name="TResult">Result to be returned from the request</typeparam>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Post(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Post(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Post Request
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
             <param name="data">Data to post</param>
+            <param name="options">Options for the request</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Post``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Post``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Post Request with TResult response
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
             <param name="data">Data to post</param>
+            <param name="options">Options for the request</param>
             <typeparam name="TResult">Result to be returned from the request</typeparam>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Put(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Put(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Put Request
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
             <param name="data">Data to put</param>
+            <param name="options">Options for the request</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Put``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Put``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Put Request with TResult response
             </summary>
@@ -24490,40 +24472,45 @@
             <param name="url">Url for the request</param>
             <param name="data">Data to put</param>
             <typeparam name="TResult">Result to be returned from the request</typeparam>
+            <param name="options">Options for the request</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Patch(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Patch(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Patch Request
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
             <param name="data">Data to patch</param>
+            <param name="options">Options for the request</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Patch``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Patch``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Patch Request with TResult response
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
             <param name="data">Data to patch</param>
+            <param name="options">Options for the request</param>
             <typeparam name="TResult">Result to be returned from the request</typeparam>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Delete(Oxide.Ext.Discord.Clients.DiscordClient,System.String)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Delete(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Delete Request
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
+            <param name="options">Options for the request</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Delete``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.Delete``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Performs a HTTP Delete Request with TResult response
             </summary>
             <param name="client">Client for the request</param>
             <param name="url">Url for the request</param>
+            <param name="options">Options for the request</param>
             <typeparam name="TResult">Result to be returned from the request</typeparam>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.CreateRequest(Oxide.Ext.Discord.Clients.DiscordClient,System.String,Oxide.Core.Libraries.RequestMethod,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.CreateRequest(Oxide.Ext.Discord.Clients.DiscordClient,System.String,Oxide.Core.Libraries.RequestMethod,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Creates a new request and queues it to be ran
             </summary>
@@ -24531,8 +24518,9 @@
             <param name="url">URL of the request</param>
             <param name="method">HTTP method of the request</param>
             <param name="data">Data to be sent with the request</param>
+            <param name="options">Options for the request</param>
         </member>
-        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.CreateRequest``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,Oxide.Core.Libraries.RequestMethod,System.Object)">
+        <member name="M:Oxide.Ext.Discord.Rest.RestHandler.CreateRequest``1(Oxide.Ext.Discord.Clients.DiscordClient,System.String,Oxide.Core.Libraries.RequestMethod,System.Object,System.Nullable{Oxide.Ext.Discord.Rest.RequestOptions})">
             <summary>
             Creates a new request and queues it to be ran
             </summary>
@@ -24540,6 +24528,7 @@
             <param name="url">URL of the request</param>
             <param name="method">HTTP method of the request</param>
             <param name="data">Data to be sent with the request</param>
+            <param name="options">Options for the request</param>
             <typeparam name="T">The type that is expected to be returned</typeparam>
         </member>
         <member name="M:Oxide.Ext.Discord.Rest.RestHandler.StartRequest(Oxide.Ext.Discord.Rest.BaseRequest)">

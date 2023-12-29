@@ -28,10 +28,11 @@ namespace Oxide.Plugins
     // ReSharper disable once UnusedType.Global
     [Info("Discord PM", "MJSU", "3.0.0")]
     [Description("Allows private messaging through discord")]
-    internal class DiscordPM : CovalencePlugin, IDiscordPlugin
+    internal class DiscordPM : CovalencePlugin, IDiscordPlugin, IDiscordPool
     {
         #region Class Fields
         public DiscordClient Client { get; set; }
+        public DiscordPluginPool Pool { get; set; }
         
         private PluginConfig _pluginConfig;
 
@@ -41,8 +42,6 @@ namespace Oxide.Plugins
         private const string NameArg = "name";
         private const string MessageArg = "message";
 
-        [DiscordPool]
-        private DiscordPluginPool _pool;
         private readonly DiscordPlaceholders _placeholders = GetLibrary<DiscordPlaceholders>();
         private readonly DiscordMessageTemplates _templates = GetLibrary<DiscordMessageTemplates>();
         private readonly DiscordCommandLocalizations _localizations = GetLibrary<DiscordCommandLocalizations>();
@@ -439,9 +438,9 @@ namespace Oxide.Plugins
         #region Helpers
         public bool TryFindPlayer(IPlayer from, string name, out IPlayer target)
         {
-            List<IPlayer> foundPlayers = _pool.GetList<IPlayer>();
-            List<IPlayer> activePlayers = _pool.GetList<IPlayer>();
-            List<IPlayer> linkedPlayers = _pool.GetList<IPlayer>();
+            List<IPlayer> foundPlayers = Pool.GetList<IPlayer>();
+            List<IPlayer> activePlayers = Pool.GetList<IPlayer>();
+            List<IPlayer> linkedPlayers = Pool.GetList<IPlayer>();
             
             try
             {
@@ -522,9 +521,9 @@ namespace Oxide.Plugins
             }
             finally
             { 
-                _pool.FreeList(foundPlayers);
-                _pool.FreeList(linkedPlayers);
-                _pool.FreeList(activePlayers);
+                Pool.FreeList(foundPlayers);
+                Pool.FreeList(linkedPlayers);
+                Pool.FreeList(activePlayers);
             }
         }
 
