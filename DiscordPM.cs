@@ -46,9 +46,9 @@ namespace Oxide.Plugins
         private readonly DiscordMessageTemplates _templates = GetLibrary<DiscordMessageTemplates>();
         private readonly DiscordCommandLocalizations _localizations = GetLibrary<DiscordCommandLocalizations>();
 
-        private readonly Hash<string, IPlayer> _replies = new Hash<string, IPlayer>();
+        private readonly Hash<string, IPlayer> _replies = new();
 
-        private readonly BotConnection  _discordSettings = new BotConnection
+        private readonly BotConnection  _discordSettings = new()
         {
             Intents = GatewayIntents.Guilds
         };
@@ -78,7 +78,9 @@ namespace Oxide.Plugins
             Client.Connect(_discordSettings);
                 
             RegisterPlaceholders();
-            RegisterTemplates();
+            RegisterGlobalTemplates();
+            RegisterEnTemplates();
+            RegisterRuTemplates();
         }
         
         protected override void LoadDefaultMessages()
@@ -99,6 +101,23 @@ namespace Oxide.Plugins
                 [LangKeys.ChatPmCommand] = "pm",
                 [LangKeys.ChatReplyCommand] = "r",
             }, this);
+            
+            lang.RegisterMessages(new Dictionary<string, string>
+            {
+                [LangKeys.Chat] = $"[#BEBEBE][[#{AccentColor}]{Title}[/#]] {PlaceholderKeys.Chat}[/#]",
+                [LangKeys.ToFormat] = $"[#BEBEBE][#{AccentColor}]ЛС для {DefaultKeys.PlayerTarget.NameClan}:[/#] {PlaceholderKeys.Message}[/#]",
+                [LangKeys.FromFormat] = $"[#BEBEBE][#{AccentColor}]ЛС от {DefaultKeys.Player.NameClan}:[/#] {PlaceholderKeys.Message}[/#]",
+                [LangKeys.LogFormat] = $"{DefaultKeys.Player.NameClan} -> {DefaultKeys.PlayerTarget.NameClan}: {PlaceholderKeys.Message}",
+                
+                [LangKeys.InvalidPmSyntax] = $"Недопустимый синтаксис. Введите [#{AccentColor}]/{DefaultKeys.Plugin.Lang.WithFormat(LangKeys.ChatPmCommand)} MJSU, привет![/#]",
+                [LangKeys.InvalidReplySyntax] = $"Недопустимый синтаксис. Пример: [#{AccentColor}]/{DefaultKeys.Plugin.Lang.WithFormat(LangKeys.ChatReplyCommand)} Привет![/#]",
+                [LangKeys.NoPreviousPm] = $"У вас нет предыдущих личных сообщений. Пожалуйста, используйте /{DefaultKeys.Plugin.Lang.WithFormat(LangKeys.ChatPmCommand)} чтобы иметь возможность использовать эту команду.",
+                [LangKeys.NoPlayersFound] = $"Игроки с именем '{PlaceholderKeys.NotFound}' не найдены",
+                [LangKeys.MultiplePlayersFound] = $"Найдено несколько игроков с именем '{PlaceholderKeys.NotFound}'.",
+
+                [LangKeys.ChatPmCommand] = "pm",
+                [LangKeys.ChatReplyCommand] = "r",
+            }, this, "ru");
         }
 
         protected override void LoadDefaultConfig()
@@ -185,13 +204,11 @@ namespace Oxide.Plugins
         
         public void SendPrivateMessageFromServer(IPlayer sender, IPlayer target, string message)
         {
-            using (PlaceholderData data = GetPmDefault(sender, target, message))
-            {
-                data.ManualPool();
-                SendPlayerPrivateMessage(sender, LangKeys.ToFormat, TemplateKeys.Messages.To, data);
-                SendPlayerPrivateMessage(target, LangKeys.FromFormat, TemplateKeys.Messages.From, data);
-                LogPrivateMessage(data);
-            }
+            using PlaceholderData data = GetPmDefault(sender, target, message);
+            data.ManualPool();
+            SendPlayerPrivateMessage(sender, LangKeys.ToFormat, TemplateKeys.Messages.To, data);
+            SendPlayerPrivateMessage(target, LangKeys.FromFormat, TemplateKeys.Messages.From, data);
+            LogPrivateMessage(data);
         }
         #endregion
 
@@ -228,11 +245,12 @@ namespace Oxide.Plugins
             CommandCreate cmd = pmCommand.Build();
             DiscordCommandLocalization localization = pmCommand.BuildCommandLocalization();
 
-            _localizations.RegisterCommandLocalizationAsync(this, "PM.Command", localization, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0, 0)).Then(_ =>
+            TemplateKey template = new("PM.Command");
+            _localizations.RegisterCommandLocalizationAsync(this, template, localization, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0, 0)).Then(_ =>
             {
-                _localizations.ApplyCommandLocalizationsAsync(this, cmd, "PM.Command").Then(() =>
+                _localizations.ApplyCommandLocalizationsAsync(this, cmd, template).Then(() =>
                 {
-                    Client.Bot.Application.CreateGlobalCommand(Client, cmd);
+                    Client.Bot.Application.CreateGlobalCommand(Client, cmd).Then(c => _pmCommand = c);
                 });
             });
         }
@@ -247,9 +265,10 @@ namespace Oxide.Plugins
             CommandCreate cmd = replyCommand.Build();
             DiscordCommandLocalization localization = replyCommand.BuildCommandLocalization();
 
-            _localizations.RegisterCommandLocalizationAsync(this, "Reply.Command", localization, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0, 0)).Then(_ =>
+            TemplateKey template = new("Reply.Command");
+            _localizations.RegisterCommandLocalizationAsync(this, template, localization, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0, 0)).Then(_ =>
             {
-                _localizations.ApplyCommandLocalizationsAsync(this, cmd, "Reply.Command").Then(() =>
+                _localizations.ApplyCommandLocalizationsAsync(this, cmd, template).Then(() =>
                 {
                     Client.Bot.Application.CreateGlobalCommand(Client, cmd);
                 });
@@ -324,21 +343,19 @@ namespace Oxide.Plugins
         
         public void SendPrivateMessageFromDiscord(DiscordInteraction interaction, IPlayer player, IPlayer target, string message)
         {
-            using (PlaceholderData data = GetPmDefault(player, target, message))
+            using PlaceholderData data = GetPmDefault(player, target, message);
+            data.ManualPool();
+            if (!interaction.GuildId.HasValue)
             {
-                data.ManualPool();
-                if (!interaction.GuildId.HasValue)
-                {
-                    ServerPrivateMessage(player, LangKeys.ToFormat, data);
-                }
-                else
-                {
-                    SendPlayerPrivateMessage(player, LangKeys.ToFormat, TemplateKeys.Messages.To, data);
-                }
-                interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Messages.To, GetInteractionCallback(interaction), GetPmDefault(player, target, message));
-                SendPlayerPrivateMessage(target, LangKeys.FromFormat, TemplateKeys.Messages.From, data);
-                LogPrivateMessage(data);
+                ServerPrivateMessage(player, LangKeys.ToFormat, data);
             }
+            else
+            {
+                SendPlayerPrivateMessage(player, LangKeys.ToFormat, TemplateKeys.Messages.To, data);
+            }
+            interaction.CreateTemplateResponse(Client, InteractionResponseType.ChannelMessageWithSource, TemplateKeys.Messages.To, GetInteractionCallback(interaction), GetPmDefault(player, target, message));
+            SendPlayerPrivateMessage(target, LangKeys.FromFormat, TemplateKeys.Messages.From, data);
+            LogPrivateMessage(data);
         }
 
         // ReSharper disable once UnusedMember.Local
@@ -383,16 +400,19 @@ namespace Oxide.Plugins
         #endregion
 
         #region Discord Templates
-        public void RegisterTemplates()
+        public void RegisterGlobalTemplates()
+        {
+            DiscordMessageTemplate logMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] {DefaultKeys.Player.NameClan} -> {DefaultKeys.PlayerTarget.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Danger);
+            _templates.RegisterGlobalTemplateAsync(this, TemplateKeys.Messages.Log, logMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
+        }
+        
+        public void RegisterEnTemplates()
         {
             DiscordMessageTemplate toMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] PM to {DefaultKeys.PlayerTarget.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Success);
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.To, toMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
             
             DiscordMessageTemplate fromMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] PM from {DefaultKeys.Player.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Danger);
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.From, fromMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));       
-            
-            DiscordMessageTemplate logMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] {DefaultKeys.Player.NameClan} -> {DefaultKeys.PlayerTarget.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Danger);
-            _templates.RegisterGlobalTemplateAsync(this, TemplateKeys.Messages.Log, logMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
             
             DiscordMessageTemplate errorUnlinkedUser = CreatePrefixedTemplateEmbed("You cannot use this command until you're have linked your game and discord accounts", DiscordColor.Danger);
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Errors.UnlinkedUser, errorUnlinkedUser, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
@@ -403,6 +423,24 @@ namespace Oxide.Plugins
             DiscordMessageTemplate errorNoPreviousPm = CreatePrefixedTemplateEmbed($"You do not have any previous discord PM's. Please use {DefaultKeys.AppCommand.Mention} to be able to use this command.", DiscordColor.Danger);
             _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Errors.NoPreviousPm, errorNoPreviousPm, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0));
         }
+
+        public void RegisterRuTemplates()
+        {
+            DiscordMessageTemplate toMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] ЛС для {DefaultKeys.PlayerTarget.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Success);
+            _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.To, toMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");
+            
+            DiscordMessageTemplate fromMessage = CreateTemplateEmbed($"[{DefaultKeys.TimestampNow.ShortTime}] ЛС от {DefaultKeys.Player.NameClan}: {PlaceholderKeys.Message}", DiscordColor.Danger);
+            _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Messages.From, fromMessage, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");       
+            
+            DiscordMessageTemplate errorUnlinkedUser = CreatePrefixedTemplateEmbed("Вы не можете использовать эту команду, пока не свяжете игровой аккаунт с аккаунтом Discord.", DiscordColor.Danger);
+            _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Errors.UnlinkedUser, errorUnlinkedUser, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");
+            
+            DiscordMessageTemplate errorInvalidAutoComplete = CreatePrefixedTemplateEmbed("Имя, которое вы выбрали, не является допустимым значением автозаполнения. Пожалуйста, убедитесь, что вы выбираете один из вариантов автозаполнения.", DiscordColor.Danger);
+            _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Errors.InvalidAutoCompleteSelection, errorInvalidAutoComplete, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");
+            
+            DiscordMessageTemplate errorNoPreviousPm = CreatePrefixedTemplateEmbed($"У вас нет предыдущих личных сообщений. Пожалуйста, используйте {DefaultKeys.AppCommand.Mention}, чтобы использовать эту команду.", DiscordColor.Danger);
+            _templates.RegisterLocalizedTemplateAsync(this, TemplateKeys.Errors.NoPreviousPm, errorNoPreviousPm, new TemplateVersion(1, 0, 0), new TemplateVersion(1, 0 ,0), "ru");
+        }
         
         public DiscordMessageTemplate CreateTemplateEmbed(string description, DiscordColor color)
         {
@@ -410,7 +448,7 @@ namespace Oxide.Plugins
             {
                 Embeds = new List<DiscordEmbedTemplate>
                 {
-                    new DiscordEmbedTemplate
+                    new()
                     {
                         Description = description,
                         Color = color.ToHex()
@@ -425,7 +463,7 @@ namespace Oxide.Plugins
             {
                 Embeds = new List<DiscordEmbedTemplate>
                 {
-                    new DiscordEmbedTemplate
+                    new()
                     {
                         Description = $"[{DefaultKeys.Plugin.Title}] {description}",
                         Color = color.ToHex()
@@ -527,7 +565,7 @@ namespace Oxide.Plugins
             }
         }
 
-        public void SendPlayerPrivateMessage(IPlayer player, string serverLang, string templateKey, PlaceholderData data)
+        public void SendPlayerPrivateMessage(IPlayer player, string serverLang, TemplateKey templateKey, PlaceholderData data)
         {
             ServerPrivateMessage(player, serverLang, data);
             DiscordPrivateMessage(player, templateKey, data);
@@ -590,7 +628,7 @@ namespace Oxide.Plugins
             }
         }
 
-        public void DiscordPrivateMessage(IPlayer player, string templateKey, PlaceholderData data)
+        public void DiscordPrivateMessage(IPlayer player, TemplateKey templateKey, PlaceholderData data)
         {
             if (player.IsLinked())
             {
@@ -600,11 +638,11 @@ namespace Oxide.Plugins
 
         public void RegisterServerLangCommand(string command, string langKey)
         {
+            HashSet<string> registered = new();
             foreach (string langType in lang.GetLanguages(this))
             {
                 Dictionary<string, string> langKeys = lang.GetMessages(langType, this);
-                string commandValue;
-                if (langKeys.TryGetValue(langKey, out commandValue) && !string.IsNullOrEmpty(commandValue))
+                if (langKeys.TryGetValue(langKey, out string commandValue) && !string.IsNullOrEmpty(commandValue) && registered.Add(commandValue))
                 {
                     AddCovalenceCommand(commandValue, command);
                 }
@@ -701,33 +739,33 @@ namespace Oxide.Plugins
             {
                 private const string Base = nameof(Messages) + ".";
                 
-                public const string To = Base + nameof(To);
-                public const string From = Base + nameof(From);
-                public const string Log = Base + nameof(Log);
+                public static readonly TemplateKey To = new(Base + nameof(To));
+                public static readonly TemplateKey From = new(Base + nameof(From));
+                public static readonly TemplateKey Log = new(Base + nameof(Log));
             }
             
             public static class Errors
             {
                 private const string Base = nameof(Errors) + ".";
 
-                public const string UnlinkedUser = Base + nameof(UnlinkedUser);
-                public const string InvalidAutoCompleteSelection = Base + nameof(InvalidAutoCompleteSelection);
-                public const string NoPreviousPm = Base + nameof(NoPreviousPm);
+                public static readonly TemplateKey UnlinkedUser = new(Base + nameof(UnlinkedUser));
+                public static readonly TemplateKey InvalidAutoCompleteSelection = new(Base + nameof(InvalidAutoCompleteSelection));
+                public static readonly TemplateKey NoPreviousPm = new(Base + nameof(NoPreviousPm));
             }
         }
 
         private static class PlaceholderKeys
         {
-            public static readonly PlaceholderKey Message = new PlaceholderKey(nameof(DiscordPM), "message");
-            public static readonly PlaceholderKey Chat = new PlaceholderKey(nameof(DiscordPM), "chat");
-            public static readonly PlaceholderKey NotFound = new PlaceholderKey(nameof(DiscordPM), "player.notfound");
+            public static readonly PlaceholderKey Message = new(nameof(DiscordPM), "message");
+            public static readonly PlaceholderKey Chat = new(nameof(DiscordPM), "chat");
+            public static readonly PlaceholderKey NotFound = new(nameof(DiscordPM), "player.notfound");
         }
 
         private class PlaceholderDataKeys
         {
-            public static readonly PlaceholderDataKey Message = new PlaceholderDataKey("pm.message");
-            public static readonly PlaceholderDataKey PlayerName = new PlaceholderDataKey("pm.name");
-            public static readonly PlaceholderDataKey Chat = new PlaceholderDataKey("pm.chat");
+            public static readonly PlaceholderDataKey Message = new("pm.message");
+            public static readonly PlaceholderDataKey PlayerName = new("pm.name");
+            public static readonly PlaceholderDataKey Chat = new("pm.chat");
         }
         #endregion
     }
